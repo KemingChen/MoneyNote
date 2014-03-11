@@ -1,39 +1,43 @@
 <ion-view title="'新增項目'">
     <ion-content has-header="true" has-tabs="true" padding="true">
 		<div class="list">
-			<a class="item item-input item-stacked-label" href="#/itemList">
+			<label class="item item-input item-stacked-label" href="#/selectData">
 				<span class="input-label">Date:　</span>
-				<span class="input-label">2014/3/11</span>
+				<input class="input-label" type="date" value="{{obj.date}}"/>
+			</label>
+			<a class="item item-input item-stacked-label">
+				<span class="input-label">Class:　</span>
+				<span class="input-label">{{obj.classname}}</span>
 			</a>
 			<label class="item item-input item-stacked-label">
 				<span class="input-label">Note:　</span>
-				<textarea placeholder="Comments"></textarea>
+				<textarea placeholder="Comments">{{obj.note}}</textarea>
 			</label>
 			<label class="item item-input item-stacked-label">
 				<span class="input-label">Cost:　</span>
-				<span class="input-label">0</span>
+				<span class="input-label">{{obj.cost}}</span>
 				<span class="input-label">NT</span>
 			</label>
 			<div class="card stable-bg" id="calculator">
 				<div class="row">
-					<button class="col button button-dark">7</button>
-					<button class="col button button-dark">8</button>
-					<button class="col button button-dark">9</button>
+					<button class="col button button-dark" ng-click="btnClick(7)">7</button>
+					<button class="col button button-dark" ng-click="btnClick(8)">8</button>
+					<button class="col button button-dark" ng-click="btnClick(9)">9</button>
 				</div>
 				<div class="row">
-					<button class="col button button-dark">4</button>
-					<button class="col button button-dark">5</button>
-					<button class="col button button-dark">6</button>
+					<button class="col button button-dark" ng-click="btnClick(4)">4</button>
+					<button class="col button button-dark" ng-click="btnClick(5)">5</button>
+					<button class="col button button-dark" ng-click="btnClick(6)">6</button>
 				</div>
 				<div class="row">
-					<button class="col button button-dark">1</button>
-					<button class="col button button-dark">2</button>
-					<button class="col button button-dark">3</button>
+					<button class="col button button-dark" ng-click="btnClick(1)">1</button>
+					<button class="col button button-dark" ng-click="btnClick(2)">2</button>
+					<button class="col button button-dark" ng-click="btnClick(3)">3</button>
 				</div>
 				<div class="row">
-					<button class="col button button-dark">0</button>
-					<button class="col button button-dark">←</button>
-					<button class="col button button-dark">完成</button>
+					<button class="col button button-dark" ng-click="btnClick(0)">0</button>
+					<button class="col button button-dark" ng-click="btnClick('back')">←</button>
+					<button class="col button button-dark" ng-click="btnClick('enter')">完成</button>
 				</div>
 			</div>
 		</div>
