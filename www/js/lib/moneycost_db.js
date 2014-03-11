@@ -92,19 +92,3 @@ DB.prototype.execute=function(sql,t,u,f)
       this.db.transaction(function(tx){ tx.executeSql(sql,[]); });
   }
 }
-
-var db = new DB();
-
-function checkSuperDB(){ 
-  if(!db.isSuperDB())
-  {
-    var s="";
-    s+="<div id='alert_msg' class='ui-widget'>";
-    s+="<div class='ui-state-error ui-corner-all' style='padding: 0 .7em;'>";
-    s+="<p><span class='ui-icon ui-icon-alert' style='float: left; margin-right: .3em;'></span>";
-    s+="<strong>Alert:</strong>&nbsp;<span id='content'>很抱歉,你的瀏覽器並不支援資料庫. IE使用者可於安裝<a href='http://www.google.com/chromeframe'>Google Frame</a>後使用.</span>";
-    s+="</div>";
-    s+="</div><!-- alert_msg -->";
-    document.getElementsByTagName("body")[0].innerHTML = s;
-  }
-}
