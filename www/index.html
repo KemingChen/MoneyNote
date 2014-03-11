@@ -8,15 +8,16 @@
 		<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 		<link rel="stylesheet" href="css/ionic.min.css">
 		<link rel="stylesheet" href="css/style.css">	
-		<script src="js/lib/ionic.bundle.min.js"></script> 		
+		<script src="js/lib/ionic.bundle.min.js"></script>
+		<script src="js/lib/moneycost_db.js"></script>
 		<script src="js/PhoneGapModule.js"></script>
-		<script src="js/app.js"></script>  		
+		<script src="js/app.js"></script>
 		<script src="controllers/itemListCtrl.js"></script>
 		<script src="controllers/addItemCtrl.js"></script>
 		<script src="controllers/classListCtrl.js"></script>
 		<script src="controllers/reportCtrl.js"></script>
 	</head>
-	<body ng-app="MoneyNote">
+	<body ng-app="MoneyNote" onload="checkSuperDB()">
         <ion-nav-bar type="bar-positive"
             animation="nav-title-slide-ios7"
             back-button-type="button-icon button-clear"
