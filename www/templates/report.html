@@ -1,8 +1,19 @@
 <ion-view title="'產生報表'" ng-init="init()">
     <ion-content has-header="true" has-tabs="true" padding="true">
+	<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+	<script type="text/javascript" src="../js/report_charts.js"></script>
+	<link rel="stylesheet" type="text/css" href="../css/report.css" />
 		<div class="list">
 	    	<label class="item">
-	    			這頁是{{ControlName}}，施工中...
+			<header>
+				<center>本月報表</center>
+			</header>
+			<div class="board" id="piechart">
+			</div>
+			<div class="board" id="linechart">
+			</div>
+			<div class="board" id="piechart_board">
+			</div>
 	    	</label>
 		</div>
     </ion-content>

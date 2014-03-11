@@ -1,0 +1,13 @@
+header{
+	font-size:40px;
+	background-color:#FF9D37;
+	display:block;
+}
+.board{
+	display:block;
+	background-color:#F8E6D4;
+	width:32.5%;
+	margin:5px 2px 0px 2px;
+	height:300px;
+	float:left;
+}
