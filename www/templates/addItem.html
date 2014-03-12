@@ -7,7 +7,7 @@
 			</label>
 			<label class="item item-input item-stacked-label" ng-click="openSelectModal()">
 				<span class="input-label">Class:　</span>
-				<span class="input-label">{{Classes[classId].title}}</span>
+				<span class="input-label">{{classname()}}</span>
 			</label>
 			<label class="item item-input item-stacked-label">
 				<span class="input-label">Note:　</span>
@@ -53,17 +53,11 @@
 			<button class="button button-positive" ng-click="closeSelectModal()">完成</button>
 		</header>
 		<ion-content has-header="true" padding="true">
-			<ion-list style="cursor: cross;">
-				<ion-item ng-repeat="Class in Classes" type="item-text-wrap">
-					<label class="item item-radio">
-						<input type="radio" name="Classes">
-						<div class="item-content">
-							Go
-						</div>
-						<i class="radio-icon ion-checkmark"></i>
-					</label>
-				</ion-item>
-			</ion-list>
+			<ion-list>
+				<ion-radio ng-repeat="Class in Classes" ng-value="Class.ckey" ng-model="classId" ng-change="classChange(Class)">
+	          		{{ Class.title }}
+	        	</ion-radio>
+	        </ion-list>
 		</ion-content>
 	</div>
 </script>

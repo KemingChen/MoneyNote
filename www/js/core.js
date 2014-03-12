@@ -48,9 +48,17 @@ angular.module('MoneyNote.services', [])
         if(confirm('是否完全清除過去所有項目?'))
         {
             db.open();
-            //db.execute('TRUNCATE table if exists MoneyNote');
             db.execute('DROP table if exists MoneyNote');
             db.execute('DROP table if exists MoneyClass');
+            db = getDatabase();
+
+            // 置入假資料
+            addClass("娛樂", 0);
+            addClass("工作", 1);
+            addClass("零用錢", 1);
+            addClass("早餐", 0);
+            addClass("午餐", 0);
+            addClass("晚餐", 0);
         }
     }
 
