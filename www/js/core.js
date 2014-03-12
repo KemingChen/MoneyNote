@@ -1,4 +1,8 @@
-var MoneyNote = (function(){
+angular.module('MoneyNote.services', [])
+
+// MoneyNote Dababase
+.factory('MNDB', function(){
+    var object;
     var db = getDatabase();
 
     function getDatabase(){
@@ -68,16 +72,21 @@ var MoneyNote = (function(){
     } 
 
     function selectItems(){
-        db.open();//, MoneyClass where classId=ckey order by time desc, ikey desc
+        var array = [];
+        db.open();
         db.execute('select ikey, time, classId, cost, note, ckey, title, property from MoneyNote, MoneyClass where classId=ckey', function(result){
-            console.log(result.rows);
+            //console.log(result.rows);
             for(var i = 0; i < result.rows.length; i++){
-                console.log(result.rows.item(i));
+                //console.log(result.rows.item(i));
+                var item = result.rows.item(i);
+                array.push(item);
             }
         });
+        return array;
     }
 
     function addClass(title, property){
+        console.log([title, property]);
         db.open();
         db.execute('insert into MoneyClass values (?, ?, ?)', [ null, title, property ]);
     }
@@ -94,13 +103,19 @@ var MoneyNote = (function(){
         db.execute('delete from MoneyClass where ckey=' + ckey + '');
     } 
 
-    function selectClasses(){
-        db.open();//, MoneyClass where classId=ckey order by time desc, ikey desc
+    function selectClasses(callback){
+        var array = [];
+        db.open();
         db.execute('select ckey, title, property from MoneyClass', function(result){
             console.log(result.rows);
             for(var i = 0; i < result.rows.length; i++){
-                console.log(result.rows.item(i));
+                //console.log(result.rows.item(i));
+                var item = result.rows.item(i);
+                array.push(item);
             }
+            console.log("Class: ");
+            console.log(array);
+            callback(array);
         });
     }
 
@@ -114,5 +129,6 @@ var MoneyNote = (function(){
         updClass: updateClass,
         delClass: deleteClass,
         selectClasses: selectClasses,
+        object: object,
     }
-})();
+});

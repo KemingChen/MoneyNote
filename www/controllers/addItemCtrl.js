@@ -1,30 +1,45 @@
-app.controller('AddItemCtrl',
-	function($scope) {
-		var obj = {};
-		obj.date = "2014-03-11";
-		obj.cost = "0";
-		obj.note = "";
-		obj.classname = "測試";
-		$scope.obj = obj;
-		
-		$scope.btnClick = function(value) {
-			var str = $scope.obj.cost;
-			if(value >= 0 && value <= 9){
-				str += value;
-				str = str[0] == "0" ? str.substring(1) : str;
-			}
-			else if(value == "back"){
-				str = str.substring(0, str.length - 1);
-				str = str == "" ? "0" : str;
-			}
-			else if(value == "enter"){
-				document.location.href = "#/itemList";
-			}
-			$scope.obj.cost = str;
-		};
+app
+.controller('AddItemCtrl', function($scope, $ionicModal, $filter, MNDB) {
+	$scope.Classes = [{title: "undefine"}];
+	$scope.classId = 0;
+	$scope.date = $filter('date')(new Date(), "yyyy-MM-dd");
+	$scope.cost = 0;
+	$scope.note = "";
 
-		function checkValue(){
-			return true;
+	$ionicModal.fromTemplateUrl('selectClass.html', function(modal) {
+    	$scope.modal = modal;
+	}, {
+		scope: $scope,
+		animation: 'slide-in-up'
+	});
+
+	MNDB.selectClasses(selectClassCallback);
+
+	$scope.clickBtn = function(btnId) {
+		if(btnId >= 0 && btnId <= 9){
+			$scope.cost = $scope.cost * 10 + btnId;
 		}
+		else if(btnId == "back"){
+			$scope.cost = Math.floor($scope.cost / 10);
+		}
+		else if(btnId == "enter"){
+			//$scope.modal.show();
+		}
+	};
+
+	$scope.openSelectModal = function(){
+		$scope.modal.show();
+	};
+	$scope.closeSelectModal = function(){
+		$scope.modal.hide();
+	};
+
+	function selectClassCallback(array){
+		$scope.Classes = array;
+		$scope.$apply();
 	}
-);
+
+	function checkValue(){
+		return true;
+	}
+});

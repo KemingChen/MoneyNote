@@ -1,45 +1,69 @@
 <ion-view title="'新增項目'">
     <ion-content has-header="true" has-tabs="true" padding="true">
-		<div class="list">
-			<label class="item item-input item-stacked-label" href="#/selectData">
+		<div class="list" ng-controller="AddItemCtrl">
+			<label class="item item-input item-stacked-label">
 				<span class="input-label">Date:　</span>
-				<input class="input-label" type="date" value="{{obj.date}}"/>
+				<input class="input-label" type="date"  ng-model="date"/>
 			</label>
-			<a class="item item-input item-stacked-label">
+			<label class="item item-input item-stacked-label" ng-click="openSelectModal()">
 				<span class="input-label">Class:　</span>
-				<span class="input-label">{{obj.classname}}</span>
-			</a>
+				<span class="input-label">{{Classes[classId].title}}</span>
+			</label>
 			<label class="item item-input item-stacked-label">
 				<span class="input-label">Note:　</span>
-				<textarea placeholder="Comments">{{obj.note}}</textarea>
+				<input placeholder="Comments" ng-model="note">
 			</label>
 			<label class="item item-input item-stacked-label">
 				<span class="input-label">Cost:　</span>
-				<span class="input-label">{{obj.cost}}</span>
+				<span class="input-label">{{cost}}</span>
 				<span class="input-label">NT</span>
 			</label>
 			<div class="card stable-bg" id="calculator">
 				<div class="row">
-					<button class="col button button-dark" ng-click="btnClick(7)">7</button>
-					<button class="col button button-dark" ng-click="btnClick(8)">8</button>
-					<button class="col button button-dark" ng-click="btnClick(9)">9</button>
+					<button class="col button button-dark" ng-click="clickBtn(7)">7</button>
+					<button class="col button button-dark" ng-click="clickBtn(8)">8</button>
+					<button class="col button button-dark" ng-click="clickBtn(9)">9</button>
 				</div>
 				<div class="row">
-					<button class="col button button-dark" ng-click="btnClick(4)">4</button>
-					<button class="col button button-dark" ng-click="btnClick(5)">5</button>
-					<button class="col button button-dark" ng-click="btnClick(6)">6</button>
+					<button class="col button button-dark" ng-click="clickBtn(4)">4</button>
+					<button class="col button button-dark" ng-click="clickBtn(5)">5</button>
+					<button class="col button button-dark" ng-click="clickBtn(6)">6</button>
 				</div>
 				<div class="row">
-					<button class="col button button-dark" ng-click="btnClick(1)">1</button>
-					<button class="col button button-dark" ng-click="btnClick(2)">2</button>
-					<button class="col button button-dark" ng-click="btnClick(3)">3</button>
+					<button class="col button button-dark" ng-click="clickBtn(1)">1</button>
+					<button class="col button button-dark" ng-click="clickBtn(2)">2</button>
+					<button class="col button button-dark" ng-click="clickBtn(3)">3</button>
 				</div>
 				<div class="row">
-					<button class="col button button-dark" ng-click="btnClick(0)">0</button>
-					<button class="col button button-dark" ng-click="btnClick('back')">←</button>
-					<button class="col button button-dark" ng-click="btnClick('enter')">完成</button>
+					<button class="col button button-dark" ng-click="clickBtn(0)">0</button>
+					<button class="col button button-dark" ng-click="clickBtn('back')">←</button>
+					<button class="col button button-dark" ng-click="clickBtn('enter')">完成</button>
 				</div>
 			</div>
 		</div>
     </ion-content>
 </ion-view>
+
+<!-- 
+-->
+<script id="selectClass.html" type="text/ng-template">
+	<div class="modal">
+		<header class="bar bar-header bar-positive">
+			<h1 class="title">選擇類別</h1>
+			<button class="button button-positive" ng-click="closeSelectModal()">完成</button>
+		</header>
+		<ion-content has-header="true" padding="true">
+			<ion-list style="cursor: cross;">
+				<ion-item ng-repeat="Class in Classes" type="item-text-wrap">
+					<label class="item item-radio">
+						<input type="radio" name="Classes">
+						<div class="item-content">
+							Go
+						</div>
+						<i class="radio-icon ion-checkmark"></i>
+					</label>
+				</ion-item>
+			</ion-list>
+		</ion-content>
+	</div>
+</script>

@@ -1,31 +1,61 @@
-var app = angular.module("MoneyNote", ['ionic']);
+var app = angular.module("MoneyNote", ['ionic', 'MoneyNote.services']);
 
 app.config( function($stateProvider, $urlRouterProvider) {
 	$stateProvider
 		.state('tab', {
-			url: '/',
+			url: '/tab',
 			abstract: true,
 			templateUrl: "templates/tab.html"
 		})
+
 		.state('tab.additem', {
-		    url: 'additem',
-			templateUrl: "templates/additem.html",
-			controller: 'AddItemCtrl'
+		    url: '/additem',
+		    views: {
+		    	'additem-tab' : {
+		    		templateUrl: "templates/additem.html",
+					//controller: 'AddItemCtrl'
+		    	}
+			}
 	  	})
+
+		.state('tab.selectClass', {
+			url: '/selectclass',
+			views: {
+				'additem-tab' : {
+					templateUrl: "templates/selectClass.html",
+					controller: 'SelectClassCtrl'
+				}
+			}
+		})
+
 	  	.state('tab.itemlist', {
-			url: "itemlist",
-			templateUrl: "templates/itemlist.html",
-			controller: 'ItemListCtrl'
+			url: "/itemlist",
+		    views: {
+		    	'itemlist-tab' : {
+					templateUrl: "templates/itemlist.html",
+					controller: 'ItemListCtrl'
+		    	}
+			}
 	    })
+
 	    .state('tab.classlist', {
-	        url: "classlist",
-			templateUrl: "templates/classlist.html",
-			controller: 'ClassListCtrl'
+	        url: "/classlist",
+		    views: {
+		    	'classlist-tab' : {
+		    		templateUrl: "templates/classlist.html",
+				controller: 'ClassListCtrl'
+		    	}
+			}
 	    })
+
 	    .state('tab.report', {
-	        url: "report",
-			templateUrl: "templates/report.html",
-			controller: 'ReportCtrl'
+	        url: "/report",
+		    views: {
+		    	'report-tab' : {
+		    		templateUrl: "templates/report.html",
+				controller: 'ReportCtrl'
+		    	}
+			}
 	    });
-	$urlRouterProvider.otherwise("/itemlist");
+	$urlRouterProvider.otherwise("/tab/itemlist");
 });
