@@ -1,5 +1,5 @@
 app
-.controller('AddItemCtrl', function($scope, $ionicModal, $location, $filter, MNDB) {
+.controller('ItemCtrl', function($scope, $ionicModal, $location, $filter, MNDB) {
 	$scope.Class = null;
 	$scope.Classes = [];
 	$scope.date = $filter('date')(new Date(), "yyyy-MM-dd");
@@ -13,7 +13,7 @@ app
 		animation: 'slide-in-up'
 	});
 
-	MNDB.selectClasses(selectClassCallback);
+	MNDB.selectClasses(onSelectQueryCallback);
 
 	$scope.classname = function(){
 		return $scope.Class === null ? "請選擇..." : $scope.Class.title;
@@ -47,7 +47,7 @@ app
 		$scope.Class = Class;
 	};
 
-	function selectClassCallback(array){
+	function onSelectQueryCallback(array){
 		$scope.Classes = array;
 	}
 

@@ -79,20 +79,23 @@ angular.module('MoneyNote.services', [])
         db.execute('delete from MoneyNote where ikey=' + ikey + '');
     } 
 
-    function selectItems(){
+    function selectItems(callback){
         var array = [];
         db.open();
         db.execute('select ikey, time, classId, cost, note, ckey, title, property from MoneyNote, MoneyClass where classId=ckey', function(result){
-            //console.log(result.rows);
+            console.log(result.rows);
             for(var i = 0; i < result.rows.length; i++){
                 //console.log(result.rows.item(i));
                 var item = result.rows.item(i);
                 array.push(item);
             }
+            console.log("Item: ");
+            console.log(array);
+            callback(array);
         });
         return array;
     }
-
+    
     function addClass(title, property){
         console.log([title, property]);
         db.open();

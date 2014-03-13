@@ -8,11 +8,11 @@ app.config( function($stateProvider, $urlRouterProvider) {
 			templateUrl: "templates/tab.html"
 		})
 
-		.state('tab.additem', {
-		    url: '/additem',
+		.state('tab.item', {
+		    url: '/item',
 		    views: {
-		    	'additem-tab' : {
-		    		templateUrl: "templates/additem.html",
+		    	'item-tab' : {
+		    		templateUrl: "templates/item.html",
 					//controller: 'AddItemCtrl'
 		    	}
 			}
