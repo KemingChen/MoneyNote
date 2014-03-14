@@ -1,7 +1,9 @@
 app.controller('ItemListCtrl', function($scope, MNDB) {
+	$scope.Items = [];
+	
 	MNDB.selectItems(onSelectQueryCallback);
 
 	function onSelectQueryCallback(array){
-		console.log(array);
+		$scope.Items = array;
 	}
 });
