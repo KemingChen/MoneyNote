@@ -13,7 +13,7 @@ app.config( function($stateProvider, $urlRouterProvider) {
 		    views: {
 		    	'item-tab' : {
 		    		templateUrl: "templates/item.html",
-					//controller: 'ItemCtrl'
+					controller: 'ItemCtrl'
 		    	}
 			}
 	  	})
@@ -23,7 +23,7 @@ app.config( function($stateProvider, $urlRouterProvider) {
 		    views: {
 		    	'itemlist-tab' : {
 		    		templateUrl: "templates/item.html",
-					//controller: 'ItemCtrl'
+					controller: 'ItemCtrl'
 		    	}
 			}
 	  	})
