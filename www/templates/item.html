@@ -1,9 +1,15 @@
-<ion-view title="'新增項目'">
-    <ion-content has-header="true" has-tabs="true" padding="true">
-		<div class="list" ng-controller="ItemCtrl">
+<div ng-controller="ItemCtrl">
+	<ion-header-bar
+		type="bar-positive"
+		left-buttons="leftButtons"
+  		right-buttons="rightButtons" 
+  		title="'新增項目'">
+	</ion-header-bar>
+	<ion-content has-header="true" has-tabs="true" padding="true">
+		<div class="list">
 			<label class="item item-input item-stacked-label">
 				<span class="input-label">Date:　</span>
-				<input class="input-label" type="date"  ng-model="date"/>
+				<input class="input-label" type="date"  ng-model="date" ng-change="onDateChanged(date)"/>
 			</label>
 			<label class="item item-input item-stacked-label" ng-click="openSelectModal()">
 				<span class="input-label">Class:　</span>
@@ -11,7 +17,7 @@
 			</label>
 			<label class="item item-input item-stacked-label">
 				<span class="input-label">Note:　</span>
-				<input placeholder="Comments" ng-model="note">
+				<input placeholder="Comments" ng-model="note" ng-change="onNoteChanged(note)">
 			</label>
 			<label class="item item-input item-stacked-label">
 				<span class="input-label">Cost:　</span>
@@ -36,15 +42,16 @@
 				</div>
 				<div class="row">
 					<button class="col button button-dark" ng-click="clickBtn(0)">0</button>
+					<button class="col button button-dark" ng-click="clickBtn('dbZero')">00</button>
 					<button class="col button button-dark" ng-click="clickBtn('back')">←</button>
-					<button class="col button button-dark" ng-click="clickBtn('enter')">完成</button>
 				</div>
 			</div>
 		</div>
-    </ion-content>
-</ion-view>
-
+	</ion-content>
+</div>
 <!-- 
+    
+
 -->
 <script id="selectClass.html" type="text/ng-template">
 	<div class="modal">
@@ -53,9 +60,8 @@
 			<button class="button button-positive" ng-click="closeSelectModal()">完成</button>
 		</header>
 		<ion-content has-header="true" padding="true">
-			{{classId}}
 			<ion-list>
-				<ion-radio ng-repeat="c in Classes" ng-value="c.ckey" ng-model="Class.ckey" ng-change="classChange(c)">
+				<ion-radio ng-repeat="c in Classes" ng-value="c.ckey" ng-model="Class.ckey" ng-change="classChanged(c)">
 	          		{{ c.title }}
 	        	</ion-radio>
 	        </ion-list>

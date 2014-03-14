@@ -8,12 +8,22 @@ app.config( function($stateProvider, $urlRouterProvider) {
 			templateUrl: "templates/tab.html"
 		})
 
-		.state('tab.item', {
+		.state('tab.itemAdd', {
 		    url: '/item/:action',
 		    views: {
 		    	'item-tab' : {
 		    		templateUrl: "templates/item.html",
-					//controller: 'AddItemCtrl'
+					//controller: 'ItemCtrl'
+		    	}
+			}
+	  	})
+
+	    .state('tab.itemEdit', {
+		    url: '/myItem/:action',
+		    views: {
+		    	'itemlist-tab' : {
+		    		templateUrl: "templates/item.html",
+					//controller: 'ItemCtrl'
 		    	}
 			}
 	  	})

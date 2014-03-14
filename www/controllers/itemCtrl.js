@@ -1,10 +1,29 @@
 app
-.controller('ItemCtrl', function($scope, $ionicModal, $location, $filter, $stateParams, MNDB) {
+.controller('ItemCtrl', function ($scope, $ionicModal, $location, $filter, $stateParams, MNDB) {
+	var cancelBtn = {
+		type: 'button-positive',
+		content: '<i>取消</i>',
+		tap: function(e) {
+			document.location.href = "#/tab/itemlist";
+		}
+	};
+
+	var finishBtn = {
+		type: 'button-positive',
+		content: '<i>' + ($stateParams.action == "new" ? "新增" : "修改") + '</i>',
+		tap: function(){
+			$scope.clickBtn("enter");
+		}
+	}
+
 	$scope.Class = null;
 	$scope.Classes = [];
 	$scope.date = $filter('date')(new Date(), "yyyy-MM-dd");
 	$scope.cost = 0;
 	$scope.note = "";
+	$scope.action = $stateParams.action;
+	$scope.leftButtons = [];
+	$scope.rightButtons = [finishBtn];
 
 	$ionicModal.fromTemplateUrl('selectClass.html', function(modal) {
     	$scope.modal = modal;
@@ -20,6 +39,7 @@ app
 	}
 
 	$scope.clickBtn = function(btnId) {
+		console.log($scope.note);
 		if(btnId >= 0 && btnId <= 9){
 			$scope.cost = $scope.cost * 10 + btnId;
 		}
@@ -27,11 +47,19 @@ app
 			//MNDB.clean();
 			$scope.cost = Math.floor($scope.cost / 10);
 		}
+		else if(btnId == "dbZero"){
+			$scope.cost = $scope.cost * 100;
+		}
 		else if(btnId == "enter"){
+			console.log("check");
 			if(checkValid()){
+				console.log([$scope.cost, $scope.note, $scope.date]);
 				MNDB.addItem($scope.Class.ckey, $scope.cost, $scope.note, Date.parse($scope.date));
 				document.location.href = "#/tab/itemlist";
 			}
+		}
+		else if(btnId == "cancel"){
+			document.location.href = "#/tab/itemlist";
 		}
 	};
 
@@ -43,16 +71,28 @@ app
 		$scope.modal.hide();
 	};
 
-	$scope.classChange = function(Class){
+	$scope.classChanged = function(Class){
 		$scope.Class = Class;
 	};
+
+	$scope.onNoteChanged = function (value){
+		console.log(value);
+		$scope.note = value;
+	}
+
+	$scope.onDateChanged = function (value){
+		console.log(value);
+		$scope.date = value;
+	}
 
 	function onSelectClassQueryCallback(array){
 		$scope.Classes = array;
 
-		if($stateParams.action != "new"){
-			console.log($stateParams.action);
-			MNDB.selectItems(onSelectItemQueryCallback, {ikey: "=" + $stateParams.action});
+		console.log($scope.action);
+		if($scope.action != "new"){
+			console.log("Find Item");
+			$scope.leftButtons.push(cancelBtn);
+			MNDB.selectItems(onSelectItemQueryCallback, {ikey: "=" + $scope.action});
 		}
 	}
 
@@ -69,7 +109,7 @@ app
 		var Classes = $scope.Classes;
 		for(var i in Classes){
 			if(Classes[i].ckey == classId){
-				console.log(Classes[i]);
+				//console.log(Classes[i]);
 				return Classes[i];
 			}
 		}

@@ -1,6 +1,6 @@
 app.controller('ItemListCtrl', function($scope, $ionicActionSheet, MNDB) {
 	$scope.items = [];
-	
+
 	MNDB.selectItems(onSelectQueryCallback);
 
 	$scope.showSheet = function(item){
@@ -15,7 +15,7 @@ app.controller('ItemListCtrl', function($scope, $ionicActionSheet, MNDB) {
 
 			buttonClicked: function(index) {
 				console.log(item.ikey);
-				document.location.href = "#/tab/item/" + item.ikey;
+				document.location.href = "#/tab/myItem/" + item.ikey;
 	        	return true;
 	      	},
 

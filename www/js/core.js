@@ -88,12 +88,12 @@ angular.module('MoneyNote.services', [])
         var stintString = "";
         db.open();
 
-        console.log(restriction);
+        //console.log(restriction);
         if(restriction !== undefined){
             stintString += restriction.time !== undefined ? " AND time " + restriction.time : "";
             stintString += restriction.ikey !== undefined ? " AND ikey " + restriction.ikey : "";
         }
-        console.log(stintString);
+        //console.log(stintString);
 
         db.execute('select ikey, time, classId, cost, note, ckey, title, property from MoneyNote, MoneyClass where classId=ckey' + stintString, function(result){
             //console.log(result.rows);
@@ -102,7 +102,7 @@ angular.module('MoneyNote.services', [])
                 var item = result.rows.item(i);
                 array.push(item);
             }
-            console.log("Item: ");
+            console.log("Items: ");
             console.log(array);
             callback(array);
         });
@@ -137,7 +137,7 @@ angular.module('MoneyNote.services', [])
                 var item = result.rows.item(i);
                 array.push(item);
             }
-            console.log("Class: ");
+            console.log("Classes: ");
             console.log(array);
             callback(array);
         });
