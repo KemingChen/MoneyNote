@@ -6,23 +6,15 @@
 		<div id="MoneyClass_Dialog" title="新增類別">
     <div style='text-align:center'>
       <span class='s_label'>類別:</span><input id='title' style='width:120px' class='s_box'/><br /><br />
-      <span class='s_label'>順序:</span><input id='order' style='width:120px' class='s_box' value='999'/>
+      <input type="checkbox" name="plus_minus" value="plus" />收入<br />
+      <input type="checkbox" name="plus_minus" value="minus" />支出<br />
+      <input type="submit" value="提交" />
     </div>
-    <div id='alert_msg' class="ui-widget">
-        <div class="ui-state-error ui-corner-all" style="padding: 0 .7em;"> 
-          <p><span class="ui-icon ui-icon-alert" style="float: left; margin-right: .3em;"></span> 
-          <strong>Alert:</strong>&nbsp;<span id='content'></span></p>
-        </div>
-    </div><!-- alert_msg -->
+    
   </div>
 
-  <div id="MoneyClass_DelDialog" title="刪除類別">
-    <div style='text-align:center'>
-      <span class='s_label' id='title'></span>
-      <span class='s_label'>轉移目標:</span>
-      <select id='target_class'></select>
-    </div>
-  </div>
+		
+  
 
 </div>
 
