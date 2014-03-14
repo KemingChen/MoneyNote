@@ -15,7 +15,7 @@ app.controller('ReportCtrl',
 .directive("drawing", function(){
   return {
     restrict: "A",
-    link: function($scope, $element, MNDB){
+    link: function($scope, $element){
 		var ctx = $element[0].getContext('2d');
 		
 		var data = [75,68,32,95,20,51];
@@ -24,18 +24,7 @@ app.controller('ReportCtrl',
 		var center = [$element[0].width / 2, $element[0].height / 2];
 		var radius = Math.min($element[0].width, $element[0].height) / 2.5;
 		var lastPosition = 0, total = 0;
-		console.log(MNDB);
-		MNDB.selectClasses(onSelectClassQueryCallback);
 		
-		function onSelectClassQueryCallback(array){
-			className = array;
-
-			if($stateParams.action != "new"){
-				console.log($stateParams.action);
-				MNDB.selectItems(onSelectItemQueryCallback, {ikey: "=" + $stateParams.action});
-			}
-		}
-		console.log(className);
 		for(var i in data) { total += data[i]; }
 		
 		for (var i = 0; i < data.length; i++) {
