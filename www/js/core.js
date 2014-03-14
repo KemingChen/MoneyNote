@@ -142,4 +142,8 @@ angular.module('MoneyNote.services', [])
         selectClasses: selectClasses,
         object: object,
     }
+})
+
+.factory('google', function(){
+    return google;
 });
