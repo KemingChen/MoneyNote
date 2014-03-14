@@ -9,7 +9,7 @@ app.config( function($stateProvider, $urlRouterProvider) {
 		})
 
 		.state('tab.item', {
-		    url: '/item',
+		    url: '/item/:action',
 		    views: {
 		    	'item-tab' : {
 		    		templateUrl: "templates/item.html",

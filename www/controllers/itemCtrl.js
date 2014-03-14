@@ -1,5 +1,5 @@
 app
-.controller('ItemCtrl', function($scope, $ionicModal, $location, $filter, MNDB) {
+.controller('ItemCtrl', function($scope, $ionicModal, $location, $filter, $stateParams, MNDB) {
 	$scope.Class = null;
 	$scope.Classes = [];
 	$scope.date = $filter('date')(new Date(), "yyyy-MM-dd");
@@ -13,7 +13,7 @@ app
 		animation: 'slide-in-up'
 	});
 
-	MNDB.selectClasses(onSelectQueryCallback);
+	MNDB.selectClasses(onSelectClassQueryCallback);
 
 	$scope.classname = function(){
 		return $scope.Class === null ? "請選擇..." : $scope.Class.title;
@@ -47,8 +47,33 @@ app
 		$scope.Class = Class;
 	};
 
-	function onSelectQueryCallback(array){
+	function onSelectClassQueryCallback(array){
 		$scope.Classes = array;
+
+		if($stateParams.action != "new"){
+			console.log($stateParams.action);
+			MNDB.selectItems(onSelectItemQueryCallback, {ikey: "=" + $stateParams.action});
+		}
+	}
+
+	function onSelectItemQueryCallback(array){
+		var item = array[0];
+		$scope.date = $filter('date')(item.time, "yyyy-MM-dd");
+		$scope.cost = item.cost;
+		$scope.note = item.note;
+		$scope.Class = getClass(item.ckey);
+		$scope.$apply();
+	}
+
+	function getClass(classId){
+		var Classes = $scope.Classes;
+		for(var i in Classes){
+			if(Classes[i].ckey == classId){
+				console.log(Classes[i]);
+				return Classes[i];
+			}
+		}
+		return null;
 	}
 
 	function checkValid(){

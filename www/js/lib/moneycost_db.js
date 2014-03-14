@@ -50,6 +50,7 @@ DB.prototype.execute=function(sql,t,u,f)
     }
   }
 
+  console.log("Run SQL: " + sql);
   if(p!=null)
   {
     if(fun!=null)
@@ -66,10 +67,21 @@ DB.prototype.execute=function(sql,t,u,f)
             return;
         });
       });
-
     }
     else
-      this.db.transaction(function(tx){ tx.executeSql(sql,p); });
+    {
+      this.db.transaction(function(tx){ tx.executeSql(sql,p,
+        function(tx,result){
+            //fun(result);
+        },
+        function(tx, error){
+            console.log(error);
+            if(fun_error!=null)
+              fun_error(tx,error);
+            return;
+        });
+      });
+    }
   }
   else
   {
@@ -89,6 +101,18 @@ DB.prototype.execute=function(sql,t,u,f)
       });
     }
     else
-      this.db.transaction(function(tx){ tx.executeSql(sql,[]); });
+    {
+      this.db.transaction(function(tx){ tx.executeSql(sql,[],
+        function(tx,result){
+            //fun(result);
+        },
+        function(tx, error){
+            console.log(error);
+            if(fun_error!=null)
+              fun_error(tx,error);
+            return;
+        });
+      });
+    }
   }
 }

@@ -53,9 +53,10 @@
 			<button class="button button-positive" ng-click="closeSelectModal()">完成</button>
 		</header>
 		<ion-content has-header="true" padding="true">
+			{{classId}}
 			<ion-list>
-				<ion-radio ng-repeat="Class in Classes" ng-value="Class.ckey" ng-model="classId" ng-change="classChange(Class)">
-	          		{{ Class.title }}
+				<ion-radio ng-repeat="c in Classes" ng-value="c.ckey" ng-model="Class.ckey" ng-change="classChange(c)">
+	          		{{ c.title }}
 	        	</ion-radio>
 	        </ion-list>
 		</ion-content>

@@ -1,7 +1,7 @@
 <ion-view title="'項目清單'">
     <ion-content has-header="true" has-tabs="true" padding="true">
-        <ion-list id="ItemList">
-            <ion-item ng-repeat="item in items">
+        <div class="list" id="ItemList">
+            <ion-item ng-repeat="item in items" ng-dblclick="showSheet(item)">
                 <div class="row">
                     <div class="underline">
                         <span>{{item.time | date:'yyyy-MM-dd'}}</span>　
@@ -21,6 +21,6 @@
                     </div>
                 </div>
             </ion-item>
-        </ion-list>
+        </div>
     </ion-content>
 </ion-view>

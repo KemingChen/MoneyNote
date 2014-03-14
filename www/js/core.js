@@ -73,17 +73,30 @@ angular.module('MoneyNote.services', [])
         db.execute('update MoneyNote set classId=?, cost=?, note=?, time=? where ikey=' + ikey + '', [ classId, cost, note, time ]);
     }
 
-    function deleteItem(ikey)
+    function deleteItem(ikey, callback)
     {
         db.open();
-        db.execute('delete from MoneyNote where ikey=' + ikey + '');
+        db.execute('delete from MoneyNote where ikey=' + ikey + '', function(){
+            if(callback !== undefined){
+                selectItems(callback);
+            }
+        });
     } 
 
-    function selectItems(callback){
+    function selectItems(callback, restriction){
         var array = [];
+        var stintString = "";
         db.open();
-        db.execute('select ikey, time, classId, cost, note, ckey, title, property from MoneyNote, MoneyClass where classId=ckey', function(result){
-            console.log(result.rows);
+
+        console.log(restriction);
+        if(restriction !== undefined){
+            stintString += restriction.time !== undefined ? " AND time " + restriction.time : "";
+            stintString += restriction.ikey !== undefined ? " AND ikey " + restriction.ikey : "";
+        }
+        console.log(stintString);
+
+        db.execute('select ikey, time, classId, cost, note, ckey, title, property from MoneyNote, MoneyClass where classId=ckey' + stintString, function(result){
+            //console.log(result.rows);
             for(var i = 0; i < result.rows.length; i++){
                 //console.log(result.rows.item(i));
                 var item = result.rows.item(i);
@@ -118,7 +131,7 @@ angular.module('MoneyNote.services', [])
         var array = [];
         db.open();
         db.execute('select ckey, title, property from MoneyClass', function(result){
-            console.log(result.rows);
+            //console.log(result.rows);
             for(var i = 0; i < result.rows.length; i++){
                 //console.log(result.rows.item(i));
                 var item = result.rows.item(i);
