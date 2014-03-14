@@ -1,9 +1,10 @@
-app.controller('ItemListCtrl', function($scope, MNDB) {
-	$scope.Items = [];
+app.controller('ItemListCtrl', function($scope, MNDB, google) {
+	$scope.items = [];
 	
 	MNDB.selectItems(onSelectQueryCallback);
 
 	function onSelectQueryCallback(array){
-		$scope.Items = array;
+		$scope.items = array;
+		$scope.$apply();
 	}
 });
