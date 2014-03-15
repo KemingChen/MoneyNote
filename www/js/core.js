@@ -141,6 +141,7 @@ angular.module('MoneyNote.services', [])
     {
         db.open();
         db.execute('delete from MoneyClass where ckey=' + ckey + '', function(){
+            db.execute('delete from MoneyNote where classId=' + ckey + '');
             if(callback !== undefined){
                 selectClasses(callback);
             }

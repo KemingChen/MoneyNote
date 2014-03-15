@@ -50,7 +50,7 @@ app.controller('ClassListCtrl', function($scope, $ionicActionSheet, $ionicModal,
 	      	},
 
 			destructiveButtonClicked: function() {
-				if(confirm('您確定要刪除此項目嗎?')){
+				if(confirm("您確定要刪除此類別\n與屬於此類別的所有項目?")){
 					MNDB.delClass(iClass.ckey, onSelectQueryCallback);
 				}
 				return true;
