@@ -1,9 +1,112 @@
 angular.module('MoneyNote.services', [])
 
 // MoneyNote Dababase
-.factory('MNDB', function(){
-    var object;
+.factory('MNDB', function($rootScope, $ionicModal, $filter){
+    //以下為 Setting TimeRange 實做 ==================
+    var now = new Date();
+    var settingConfirmcallback = undefined;
+    var settingBtn = {
+        type: 'button-positive',
+        content: '<i class="ion-gear-a"></i>',
+        tap: function(e) {
+            $rootScope.modal.show();
+        }
+    };
+
+    $rootScope.data = {
+        start: "",
+        end: "",
+    }
+
+    $ionicModal.fromTemplateUrl('selectTimeRange.html', function(modal) {
+        $rootScope.modal = modal;
+    }, {
+        scope: $rootScope,
+        animation: 'slide-in-up',
+    }); 
+    
+    $rootScope.closeSetting = function(){
+        $rootScope.modal.hide();
+    }
+
+    $rootScope.confirmSetting = function(){
+        if(checkValid()){
+            $rootScope.modal.hide();
+            settingConfirmcallback();
+        }
+    }
+
+    $rootScope.choose = function(action){
+        if(action == "today"){
+            $rootScope.data.start = $filter('date')(now, "yyyy-MM-dd");
+            $rootScope.data.end = $filter('date')(now, "yyyy-MM-dd");
+        }
+        else if(action == "month"){
+            $rootScope.data.start = $filter('date')(new Date(
+                now.getFullYear(), 
+                now.getMonth(),
+                1 ), "yyyy-MM-dd");
+            $rootScope.data.end = $filter('date')(new Date(
+                now.getFullYear(), 
+                now.getMonth() + 1,
+                0 ), "yyyy-MM-dd");
+        }
+        else if(action == "year"){
+            $rootScope.data.start = $filter('date')(new Date(
+                now.getFullYear(), 
+                0,
+                1 ), "yyyy-MM-dd");
+            $rootScope.data.end = $filter('date')(new Date(
+                now.getFullYear() + 1, 
+                0,
+                0 ), "yyyy-MM-dd");
+        }
+    }
+
+    $rootScope.onChanged = function(tag, value){
+        if(tag == "start"){
+            $rootScope.data.start = value;
+        }
+        else if(tag == "end"){
+            $rootScope.data.end = value;
+        }
+    }
+
+    function checkValid(){
+        if(!$rootScope.data.start.match(/\d{4}-\d{2}-\d{2}/)){
+            alert("起始時間格式有誤!!!");
+            return false;
+        }
+        if(!$rootScope.data.end.match(/\d{4}-\d{2}-\d{2}/)){
+            alert("結束時間格式有誤!!!");
+            return false;
+        }
+
+        var start = new Date($rootScope.data.start);
+        var end = new Date($rootScope.data.end);
+        
+        if(end.getTime() < start.getTime()){
+            alert("起始時間有誤!!!");
+            return false;
+        }
+
+        timeRange.start = $rootScope.data.start;
+        timeRange.end = $rootScope.data.end;
+
+        return true;
+    }
+
+    function getSettingBtn(callback){
+        settingConfirmcallback = callback;
+        return settingBtn;
+    }
+
+    //以下為 DB Service ==============================
     var db = getDatabase();
+    var timeRange = {
+        start: $filter('date')(now, "yyyy-MM-dd"),
+        end: $filter('date')(now, "yyyy-MM-dd"),
+    }
 
     function getDatabase(){
         var db = new DB();
@@ -101,12 +204,12 @@ angular.module('MoneyNote.services', [])
 
     function selectItems(callback, restriction){
         var array = [];
-        var stintString = "";
+        var stintString = " AND time BETWEEN '" + timeRange.start + "' AND '" + timeRange.end + "'";
         db.open();
 
         //console.log(restriction);
         if(restriction !== undefined){
-            stintString += restriction.time !== undefined ? " AND time " + restriction.time : "";
+            //stintString += restriction.time !== undefined ? " AND time " + restriction.time : "";
             stintString += restriction.ikey !== undefined ? " AND ikey " + restriction.ikey : "";
         }
         //console.log(stintString);
@@ -174,7 +277,7 @@ angular.module('MoneyNote.services', [])
         updClass: updateClass,
         delClass: deleteClass,
         selectClasses: selectClasses,
-        object: object,
+        getSettingBtn: getSettingBtn,
     }
 })
 

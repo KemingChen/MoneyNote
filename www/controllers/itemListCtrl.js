@@ -5,12 +5,13 @@ app.controller('ItemListCtrl', function($scope, $ionicActionSheet, MNDB) {
 		tap: function(){
 			$scope.items = [];
 			$scope.$apply();
-			MNDB.clean(onCleanCallback);
+			MNDB.clean(onChangeCallback);
 		}
 	}
 
 	$scope.items = [];
 	$scope.leftButtons = [cleanDatabaseBtn];
+	$scope.rightButtons = [MNDB.getSettingBtn(onChangeCallback)];
 
 	MNDB.selectItems(onSelectQueryCallback);
 
@@ -44,7 +45,7 @@ app.controller('ItemListCtrl', function($scope, $ionicActionSheet, MNDB) {
 		$scope.$apply();
 	}
 
-	function onCleanCallback(){
+	function onChangeCallback(){
 		MNDB.selectItems(onSelectQueryCallback);
 	}
 });

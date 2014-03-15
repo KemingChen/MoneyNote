@@ -26,3 +26,51 @@
 	</body>
 </html>
 <script src="js/core.js"></script>
+
+<script id="selectTimeRange.html" type="text/ng-template">
+	<div class="modal">
+		<header class="bar bar-header bar-positive">
+			<button class="button button-positive" ng-click="closeSetting()">取消</button>
+			<h1 class="title">選擇時間範圍</h1>
+			<button class="button button-positive" ng-click="confirmSetting()">確定</button>
+		</header>
+		<ion-content has-header="true" padding="true">
+			<div class="list">
+				<div class="card">
+                    <div class="item item-divider">貼心選項</div>
+                    <div class="row item">
+                    	<div class="rol">
+                    		<button class="button button-energized" ng-click="choose('today')">
+	                    		Today
+	                    	</button>
+                    	</div>　
+                    	<div class="rol">
+                    		<button class="button button-energized" ng-click="choose('month')">
+	                    		This Month
+	                    	</button>
+                    	</div>　
+                    	<div class="rol">
+                    		<button class="button button-energized" ng-click="choose('year')">
+	                    		This Year
+	                    	</button>
+                    	</div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="item item-divider">起始時間</div>
+                    <label class="item item-input">
+                        <input class="input-label" type="date" ng-model="data.start" ng-change="onChanged('start', data.start)" />
+                    </label>
+                </div>
+
+                <div class="card">
+                    <div class="item item-divider">結束時間</div>
+                    <label class="item item-input">
+                        <input class="input-label" type="date"  ng-model="data.end" ng-change="onChanged('end', data.end)" />
+                    </label>
+                </div>
+            </div>
+		</ion-content>
+	</div>
+</script>
