@@ -137,10 +137,14 @@ angular.module('MoneyNote.services', [])
         db.execute('update MoneyClass set title=?, property=? where ckey=' + ckey + '', [ckey, title, property]);
     }
 
-    function deleteClass(ckey)
+    function deleteClass(ckey, callback)
     {
         db.open();
-        db.execute('delete from MoneyClass where ckey=' + ckey + '');
+        db.execute('delete from MoneyClass where ckey=' + ckey + '', function(){
+            if(callback !== undefined){
+                selectClasses(callback);
+            }
+        });
     } 
 
     function selectClasses(callback){

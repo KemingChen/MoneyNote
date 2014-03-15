@@ -7,7 +7,7 @@
     </ion-header-bar>
     <ion-content has-header="true" has-tabs="true" padding="true">
         <div class="list" id="ClassList">
-            <ion-item ng-repeat="Class in Classes" ng-dblclick="showSheet()">
+            <ion-item ng-repeat="Class in Classes" ng-dblclick="showSheet(Class)">
                 <div>
                     <span class="{{Class.property == 1 ? 'balanced-bg' : 'assertive-bg'}} stable">
                     	{{Class.property == 0 ? "支出" : "收入"}}
@@ -26,16 +26,25 @@
         <header class="bar bar-header bar-positive">
             <button class="button button-positive" ng-click="closeModal()">取消</button>
             <h1 class="title">類別</h1>
-            <button class="button button-positive" ng-click="closeSelectModal()">
-                {{action == "new" ? "新增" : "修改"}}
+            <button class="button button-positive" ng-click="confirm()">
+                {{action == "new" ? "確定" : "修改"}}
             </button>
         </header>
         <ion-content has-header="true" padding="true">
             <div class="list">
-                <label class="item item-input item-stacked-label">
-                    <span class="input-label">類別名稱:　</span>
-                    <input class="input-label" type="text"  ng-model="title" ng-change="onTitleChanged(title)"/>
-                </label>
+                <div class="card">
+                    <div class="item item-divider">名稱</div>
+                    <label class="item item-input">
+                        <input class="input-label" type="text"  ng-model="data.title" ng-change="onTitleChanged(data.title)" placeholder="..."/>
+                    </label>
+                </div>
+
+                <div class="card">
+                    <div class="item item-divider">種類</div>
+                    <ion-radio ng-repeat="k in kind" ng-value="k.property" ng-model="data.property" ng-change="kindChanged(k)">
+                        {{ k.tag }}
+                    </ion-radio>
+                </div>
             </div>
         </ion-content>
     </div>
