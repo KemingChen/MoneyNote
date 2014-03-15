@@ -3,10 +3,12 @@ app.controller('ItemListCtrl', function($scope, $ionicActionSheet, MNDB) {
 		type: 'button-positive',
 		content: '<i class="ion-refresh"></i>',
 		tap: function(){
-			MNDB.clean();
+			$scope.items = [];
+			$scope.$apply();
+			MNDB.clean(onCleanCallback);
 		}
 	}
-	
+
 	$scope.items = [];
 	$scope.leftButtons = [cleanDatabaseBtn];
 
@@ -40,5 +42,9 @@ app.controller('ItemListCtrl', function($scope, $ionicActionSheet, MNDB) {
 	function onSelectQueryCallback(array){
 		$scope.items = array;
 		$scope.$apply();
+	}
+
+	function onCleanCallback(){
+		MNDB.selectItems(onSelectQueryCallback);
 	}
 });

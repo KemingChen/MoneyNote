@@ -44,7 +44,7 @@ angular.module('MoneyNote.services', [])
         return db;
     }
 
-    function cleanAllItem(){
+    function cleanAllItem(callback){
         if(confirm('是否完全清除過去所有項目?'))
         {
             db.open();
@@ -71,6 +71,10 @@ angular.module('MoneyNote.services', [])
             addItem(4, 50, "", "2014-03-15");
             addItem(5, 80, "排骨飯", "2014-03-15");
             addItem(6, 60, "豚骨拉麵", "2014-03-15");
+
+            if(callback){
+                callback();
+            }
         }
     }
 
