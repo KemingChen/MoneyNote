@@ -93,10 +93,16 @@ app.controller('ClassListCtrl', function($scope, $ionicActionSheet, $ionicModal,
 
 		for(var i in Classes){
 			if(Classes[i].title == data.title){
-				alert("類別名稱重複!!!")
+				alert("類別名稱重複!!!");
 				return false;
 			}
 		}
+
+		if(data.property === undefined){
+			alert("未選擇種類!!!");
+			return false;
+		}
+		
 		return true;
 	}
 });
