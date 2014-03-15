@@ -110,7 +110,9 @@ app.controller('ReportCtrl', function($scope, MNDB, google) {
 			template: '<div class="piechart"></div>',
 			link: function(scope, element, attrs) {
 				var chart = new google.visualization.PieChart(element[0]);
-				var options = {title: 'Company Performance'};
+				var options = {
+					title: '每類別的金額',
+					is3D: true};
 				scope.$watch('data',
 					function(v) {
 						var data = google.visualization.arrayToDataTable(v);
@@ -132,7 +134,10 @@ app.controller('ReportCtrl', function($scope, MNDB, google) {
 			template: '<div class="linechart"></div>',
 			link: function(scope, element, attrs) {
 				var chart = new google.visualization.LineChart(element[0]);
-				var options = {title: 'Company Performance'};
+				var options = {
+					title: '每日的收支',
+					hAxis: {title: '日'},
+					vAxis: {title: '元'}};
 				scope.$watch('data',
 					function(v) {
 						var data = google.visualization.arrayToDataTable(v);
