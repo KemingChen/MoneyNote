@@ -7,7 +7,7 @@
     </ion-header-bar>
     <ion-content has-header="true" has-tabs="true" padding="true">
         <div class="list" id="ClassList">
-            <ion-item ng-repeat="Class in Classes" ng-dblclick="showSheet(Class)">
+            <ion-item ng-repeat="Class in Classes" ng-click="showSheet(Class)">
                 <div>
                     <span class="{{Class.property == 1 ? 'balanced-bg' : 'assertive-bg'}} stable">
                     	{{Class.property == 0 ? "支出" : "收入"}}
