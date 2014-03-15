@@ -8,71 +8,95 @@ google.setOnLoadCallback(function() {
 
 app.controller('ReportCtrl', function($scope, MNDB, google) {
 	var className=[];
+	var allItems=[];
+	
+	MNDB.selectItems(selectItemsCallback);
+	
+	function selectItemsCallback(array)
+	{
+		allItems = array;
+		console.log(array);
+	}
+	
 	MNDB.selectClasses(selectClassesCallback);
 
 	function selectClassesCallback(array)
 	{
 		className = array;
-		console.log(className);
 	}
 
 	$scope.piechartHistory = [];
 	$scope.piechart = function() {
+	
+		var pie = [];
 		
-		var piechartHistory=[];
-		for (i=0;i<className.length;i++)
+		for (i = 0; i < className.length + 1; i++)
 		{
-			piechartHistory[i]=[];
-			piechartHistory[i][0]=className[i].title;
-			piechartHistory[i][1]=0;
+			pie[i] = [];
+			if(i != 0)
+			{
+				pie[i][0] = className[i - 1].title;
+				pie[i][1] = 0;
+			}
 		}
-		console.log(piechartHistory);
-		var test=[
-		['Task', 'Hours per Day'],
-		['Work',     11],
-		['Eat',      2],
-		['Commute',  2],
-		['Watch TV', 2],
-		['Sleep',    7]
-		]
-		$scope.piechartHistory = test;
-
-
-		console.log(test[2][1]);
+		
+		pie[0][0] = '類別';
+		pie[0][1] = '花費';
+		
+		for(i = 0; i < allItems.length; i++)
+		{
+			for(j = 0; j < className.length + 1; j++)
+			{
+				if(allItems[i].title == pie[j][0])
+				{
+					pie[j][1] += allItems[i].cost;
+				}
+			}
+		}
+		
+		$scope.piechartHistory = pie;
 	};
 
 	$scope.linechartHistory = [];
 	$scope.linechart = function() {
-		var x = [
-			['month', 'count']
-		];
-		var linechartHistory = [
+		
+		var line = [];
+		var date = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10',
+					'11', '12', '13', '14', '15', '16', '17', '18', '19', '20',
+					'21', '22', '23', '24', '25', '26', '27', '28', '29', '30',
+					'31'];
+		var today = new Date();
+		var month = today.getMonth() + 1;
+		var day = today.getDate();
+		for(i = 0; i < day + 1; i++)
+		{
+			line[i] = [];
+			if (i != 0)
 			{
-				month: '1月',
-				count: 20
-			},
-			{
-				month: '2月',
-				count: 200
-			},
-			{
-				month: '3月',
-				count: 50
-			},
-			{
-				month: '4月',
-				count: 150
+				line[i][0] = date[i - 1];
+				line[i][1] = 0;
+				line[i][2] = 0;
 			}
-		];
-		angular.forEach(linechartHistory,
-			function(record, key) {
-				x.push([
-					record.month,
-					record.count
-				]);
+		}
+		line[0][0] = '日';
+		line[0][1] = '支出';
+		line[0][2] = '收入';
+		for(i = 0; i < allItems.length; i++)
+		{
+			for(j = 0; j < line.length; j++)
+			{
+				var date = allItems[i].time.split("-");
+				if(date[2] == line[j][0])
+				{
+					if(!allItems[i].property)
+						line[j][1] += allItems[i].cost;
+					else
+						line[j][2] += allItems[i].cost;
+				}
 			}
-		);
-		$scope.linechartHistory = x;
+		}
+		console.log(line);
+		$scope.linechartHistory = line;
 	};
 })
 .directive('piechart', 
