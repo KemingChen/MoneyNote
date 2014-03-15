@@ -7,16 +7,18 @@ google.setOnLoadCallback(function() {
 });*/
 
 app.controller('ReportCtrl', function($scope, MNDB, google) {
+	var className=[];
+	MNDB.selectClasses(selectClassesCallback);
+
+	function selectClassesCallback(array)
+	{
+		className = array;
+		console.log(className);
+	}
+
 	$scope.piechartHistory = [];
 	$scope.piechart = function() {
-		var className=[];
-		MNDB.selectClasses(selectClassesCallback);
-		function selectClassesCallback(array)
-		{
-			className=array;
-			$scope.apply();
-		}
-		console.log(className);
+		
 		var piechartHistory=[];
 		for (i=0;i<className.length;i++)
 		{
