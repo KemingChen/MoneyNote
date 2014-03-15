@@ -1,47 +1,22 @@
-<ion-view title="'類別清單'" ng-init="init()">
+<div>
+    <ion-header-bar
+        type="bar-positive"
+        left-buttons="leftButtons"
+        right-buttons="rightButtons" 
+        title="'類別清單'">
+    </ion-header-bar>
     <ion-content has-header="true" has-tabs="true" padding="true">
-<div class="list">
-<label class="item">
-
-<style type="text/css">
-	table.tableizer-table {
-	border: 1px solid #CCC; font-family: Arial, Helvetica, sans-serif
-	font-size: 16px;
-} 
-.tableizer-table td {
-	padding: 4px;
-	margin: 3px;
-	border: 1px solid #ccc;
-}
-.tableizer-table th {
-	background-color: #104E8B; 
-	color: #FFF;
-	font-weight: bold;
-}
-</style><table class="tableizer-table">
-<tr class="tableizer-firstrow"><th>Class</th><th>Income/Payout</th></tr>
-<tr><td>Default</td><td>Payout</td></tr>
- 
-</table>
-
-
-	<div style='text-align:left'>
-      		<button type="New" onclick="f1()">新增 </button>
-		<button type="Edit" onclick="f2()">編輯</button>
-		<button type="Remove" onclick="f3()">刪除</button>
-	</div>
-
-    </div>
-    
-  </div>
-</div>
-
-	
-
-
-	
-
-</label>
-</div>
+        <div class="list" id="ClassList">
+            <ion-item ng-repeat="Class in Classes">
+                <div>
+                    <span class="{{Class.property == 1 ? 'balanced-bg' : 'assertive-bg'}} stable">
+                    	{{Class.property == 0 ? "支出" : "收入"}}
+                    </span>　
+                    <span>
+                        {{Class.title}}
+                    </span>
+                </div>
+            </ion-item>
+        </div>
     </ion-content>
-</ion-view>
+</div>

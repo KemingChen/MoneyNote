@@ -1,7 +1,10 @@
-app.controller('ClassListCtrl',
-	function($scope) {
-		$scope.init = function() {
-			$scope.ControlName = "類別清單";
-		};
+app.controller('ClassListCtrl', function($scope, MNDB) {
+	$scope.Classes = [];
+
+	MNDB.selectClasses(onSelectQueryCallback);
+	
+	function onSelectQueryCallback(array){
+		$scope.Classes = array;
+		$scope.$apply();
 	}
-);
+});
