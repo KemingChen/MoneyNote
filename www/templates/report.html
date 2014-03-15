@@ -3,15 +3,18 @@
 	<link rel="stylesheet" type="text/css" href="../css/report.css" />
 		<div class="list">
 	    	<label class="item">
-			<canvas class="board" drawing></canvas>
-			<div class="board" id="piechart">
-			
-			</div>
-			<div class="board" id="linechart">
-			</div>
-			<div class="board" id="piechart_board">
-			</div>
-			
+					<div class="board">
+						<button ng-click="piechart()">creat pie chart</button>
+						<piechart data="piechartHistory"></piechart>
+					</div>
+					<div class="board">
+						<button ng-click="linechart()">creat line chart</button>
+						<linechart data="linechartHistory"></linechart>
+					</div>
+					<!--<div class="board">
+						<button ng-click="piechart()">creat pie chart</button>
+						<piechart data="scoreHistory"></piechart>
+					</div>-->
 	    	</label>
 		</div>
     </ion-content>
