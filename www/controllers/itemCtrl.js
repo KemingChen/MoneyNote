@@ -55,10 +55,10 @@ app
 			if(checkValid()){
 				console.log([$scope.cost, $scope.note, $scope.date]);
 				if($scope.action == "new"){
-					MNDB.addItem($scope.Class.ckey, $scope.cost, $scope.note, Date.parse($scope.date));
+					MNDB.addItem($scope.Class.ckey, $scope.cost, $scope.note, $scope.date);
 				}
 				else{
-					MNDB.updItem($scope.ikey, $scope.Class.ckey, $scope.cost, $scope.note, Date.parse($scope.date));
+					MNDB.updItem($scope.ikey, $scope.Class.ckey, $scope.cost, $scope.note, $scope.date);
 				}
 				document.location.href = "#/tab/itemlist";
 			}
