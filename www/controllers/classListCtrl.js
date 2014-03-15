@@ -3,18 +3,18 @@ app.controller('ClassListCtrl', function($scope, $ionicActionSheet, $ionicModal,
 		type: 'button-positive',
 		content: '<i>新增</i>',
 		tap: function(){
+			$scope.action = "new";
+			$scope.data = {
+				ckey: undefined,
+				title: "",
+				property: undefined,
+			};
 			$scope.modal.show();
 		}
 	}
 
-	$scope.action = "new";
 	$scope.Classes = [];
 	$scope.rightButtons = [newClassBtn];
-	$scope.data = {
-		ckey: undefined,
-		title: "",
-		property: undefined,
-	};
 	$scope.kind = [
 		{tag: "支出", property: 0},
 		{tag: "收入", property: 1},
@@ -40,6 +40,12 @@ app.controller('ClassListCtrl', function($scope, $ionicActionSheet, $ionicModal,
 			cancel: function() {},
 
 			buttonClicked: function(index) {
+				$scope.data = {
+					ckey: iClass.ckey,
+					title: iClass.title,
+					property: iClass.property,
+				};
+				$scope.modal.show();
 	        	return true;
 	      	},
 
@@ -66,7 +72,7 @@ app.controller('ClassListCtrl', function($scope, $ionicActionSheet, $ionicModal,
 				MNDB.addClass(data.title, data.property);
 			}
 			else{
-				MDDB.uptClass(data.ckey, data.title, data.property);
+				MNDB.updClass(data.ckey, data.title, data.property);
 			}
 			$scope.modal.hide();
 			$scope.Classes = [];
@@ -92,7 +98,7 @@ app.controller('ClassListCtrl', function($scope, $ionicActionSheet, $ionicModal,
 		var Classes = $scope.Classes;
 
 		for(var i in Classes){
-			if(Classes[i].title == data.title){
+			if(Classes[i].ckey !== ignoreKey && Classes[i].title == data.title){
 				alert("類別名稱重複!!!");
 				return false;
 			}
@@ -102,7 +108,7 @@ app.controller('ClassListCtrl', function($scope, $ionicActionSheet, $ionicModal,
 			alert("未選擇種類!!!");
 			return false;
 		}
-		
+
 		return true;
 	}
 });

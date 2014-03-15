@@ -134,7 +134,7 @@ angular.module('MoneyNote.services', [])
     function updateClass(ckey, title, property)
     {
         db.open();
-        db.execute('update MoneyClass set title=?, property=? where ckey=' + ckey + '', [ckey, title, property]);
+        db.execute('update MoneyClass set title=?, property=? where ckey=' + ckey + '', [title, property]);
     }
 
     function deleteClass(ckey, callback)
