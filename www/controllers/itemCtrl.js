@@ -54,7 +54,12 @@ app
 			console.log("check");
 			if(checkValid()){
 				console.log([$scope.cost, $scope.note, $scope.date]);
-				MNDB.addItem($scope.Class.ckey, $scope.cost, $scope.note, Date.parse($scope.date));
+				if($scope.action == "new"){
+					MNDB.addItem($scope.Class.ckey, $scope.cost, $scope.note, Date.parse($scope.date));
+				}
+				else{
+					MNDB.updItem($scope.ikey, $scope.Class.ckey, $scope.cost, $scope.note, Date.parse($scope.date));
+				}
 				document.location.href = "#/tab/itemlist";
 			}
 		}
@@ -98,6 +103,7 @@ app
 
 	function onSelectItemQueryCallback(array){
 		var item = array[0];
+		$scope.ikey = item.ikey;
 		$scope.date = $filter('date')(item.time, "yyyy-MM-dd");
 		$scope.cost = item.cost;
 		$scope.note = item.note;
