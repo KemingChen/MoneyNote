@@ -64,6 +64,7 @@
 				<ion-radio ng-repeat="c in Classes" ng-value="c.ckey" ng-model="Class.ckey" ng-change="classChanged(c)">
 	          		{{ c.title }}
 	        	</ion-radio>
+	        	<div>{{Classes.length == 0 ? '尚未有任何類別唷 ~~ 快去新增吧!!!' : ''}}</div>
 	        </ion-list>
 		</ion-content>
 	</div>

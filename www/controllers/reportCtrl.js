@@ -9,23 +9,32 @@ google.setOnLoadCallback(function() {
 app.controller('ReportCtrl', function($scope, MNDB, google) {
 	var className=[];
 	var allItems=[];
+	$scope.ready = false;
+	$scope.piechartHistory = [];
+	$scope.linechartHistory = [];
+	$scope.rightButtons = [MNDB.getSettingBtn(onChangedCallback)];
 	
 	MNDB.selectItems(selectItemsCallback);
 	
+	function onChangedCallback(){
+		MNDB.selectItems(selectItemsCallback);
+	}
+
 	function selectItemsCallback(array)
 	{
 		allItems = array;
-		console.log(array);
+		MNDB.selectClasses(selectClassesCallback);
 	}
 	
-	MNDB.selectClasses(selectClassesCallback);
-
 	function selectClassesCallback(array)
 	{
 		className = array;
+		$scope.linechart();
+		$scope.piechart();
+		$scope.ready = true;
+		$scope.$apply();
 	}
 
-	$scope.piechartHistory = [];
 	$scope.piechart = function() {
 	
 		var pie = [];
@@ -57,7 +66,6 @@ app.controller('ReportCtrl', function($scope, MNDB, google) {
 		$scope.piechartHistory = pie;
 	};
 
-	$scope.linechartHistory = [];
 	$scope.linechart = function() {
 		
 		var line = [];
