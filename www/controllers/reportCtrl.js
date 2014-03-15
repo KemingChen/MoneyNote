@@ -8,38 +8,36 @@ google.setOnLoadCallback(function() {
 
 app.controller('ReportCtrl',
 	function($scope, MNDB, google) {
+		
 		$scope.piechartHistory = [];
 		$scope.piechart = function() {
-			var x = [
-				['className', 'count']
-			];
-			var piechartHistory = [
-				{
-					className: '1月',
-					count: 20
-				},
-				{
-					className: '2月',
-					count: 200
-				},
-				{
-					className: '3月',
-					count: 50
-				},
-				{
-					className: '4月',
-					count: 150
-				}
-			];
-			angular.forEach(piechartHistory,
-				function(record, key) {
-					x.push([
-						record.className,
-						record.count
-					]);
-				}
-			);
-			$scope.piechartHistory = x;
+			var className=[];
+			MNDB.selectClasses(selectClassesCallback);
+			function selectClassesCallback(array)
+			{
+				className=array;
+			}
+			console.log(className);
+			var piechartHistory=[];
+			for (i=0;i<className.length;i++)
+			{
+				piechartHistory[i]=[];
+				piechartHistory[i][0]=className[i].title;
+				piechartHistory[i][1]=0;
+			}
+			console.log(piechartHistory);
+			var test=[
+          ['Task', 'Hours per Day'],
+          ['Work',     11],
+          ['Eat',      2],
+          ['Commute',  2],
+          ['Watch TV', 2],
+          ['Sleep',    7]
+        ]
+			$scope.piechartHistory = test;
+			
+		
+			console.log(test[2][1]);
 		};
 		
 		$scope.linechartHistory = [];
