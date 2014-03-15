@@ -53,12 +53,24 @@ angular.module('MoneyNote.services', [])
             db = getDatabase();
 
             // 置入假資料
-            addClass("娛樂", 0);
-            addClass("工作", 1);
-            addClass("零用錢", 1);
-            addClass("早餐", 0);
-            addClass("午餐", 0);
-            addClass("晚餐", 0);
+            addClass("娛樂", 0);// ClassId = 1
+            addClass("工作", 1);// ClassId = 2
+            addClass("零用錢", 1);// ClassId = 3
+            addClass("早餐", 0);// ClassId = 4
+            addClass("午餐", 0);// ClassId = 5
+            addClass("晚餐", 0);// ClassId = 6
+
+            addItem(1, 300, "打保齡球", "2014-03-01");
+            addItem(3, 1000, "3月份的錢", "2014-03-01");
+            addItem(4, 50, "漢堡", "2014-03-02");
+            addItem(5, 80, "雞腿飯", "2014-03-02");
+            addItem(6, 60, "拉麵", "2014-03-02");
+            addItem(2, 400, "", "2014-03-08");
+            addItem(2, 2000, "MoneyNote 設計", "2014-03-11");
+            addItem(2, 100, "麵店打工", "2014-03-15");
+            addItem(4, 50, "", "2014-03-15");
+            addItem(5, 80, "排骨飯", "2014-03-15");
+            addItem(6, 60, "豚骨拉麵", "2014-03-15");
         }
     }
 

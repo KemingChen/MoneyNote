@@ -1,5 +1,14 @@
 app.controller('ItemListCtrl', function($scope, $ionicActionSheet, MNDB) {
+	var cleanDatabaseBtn = {
+		type: 'button-positive',
+		content: '<i class="ion-refresh"></i>',
+		tap: function(){
+			MNDB.clean();
+		}
+	}
+	
 	$scope.items = [];
+	$scope.leftButtons = [cleanDatabaseBtn];
 
 	MNDB.selectItems(onSelectQueryCallback);
 
