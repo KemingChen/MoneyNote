@@ -13,6 +13,7 @@ app.controller('ReportCtrl', function($scope, MNDB, google) {
 	$scope.piechartHistory = [];
 	$scope.linechartHistory = [];
 	$scope.rightButtons = [MNDB.getSettingBtn(onChangedCallback)];
+	$scope.timeRange = MNDB.getTimeRangeTag;
 	
 	MNDB.selectItems(selectItemsCallback);
 	

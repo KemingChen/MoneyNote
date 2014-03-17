@@ -12,6 +12,7 @@ app.controller('ItemListCtrl', function($scope, $ionicActionSheet, MNDB) {
 	$scope.items = [];
 	$scope.leftButtons = [cleanDatabaseBtn];
 	$scope.rightButtons = [MNDB.getSettingBtn(onChangeCallback)];
+	$scope.timeRange = MNDB.getTimeRangeTag;
 
 	MNDB.selectItems(onSelectQueryCallback);
 

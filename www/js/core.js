@@ -108,6 +108,10 @@ angular.module('MoneyNote.services', [])
         end: $filter('date')(now, "yyyy-MM-dd"),
     }
 
+    function getTimeRangeTag(){
+        return timeRange.start + " ~ " + timeRange.end;
+    }
+
     function getDatabase(){
         var db = new DB();
 
@@ -165,15 +169,24 @@ angular.module('MoneyNote.services', [])
 
             addItem(1, 300, "打保齡球", "2014-03-01");
             addItem(3, 1000, "3月份的錢", "2014-03-01");
+
             addItem(4, 50, "漢堡", "2014-03-02");
             addItem(5, 80, "雞腿飯", "2014-03-02");
             addItem(6, 60, "拉麵", "2014-03-02");
+
             addItem(2, 400, "", "2014-03-08");
+
             addItem(2, 2000, "MoneyNote 設計", "2014-03-11");
+
             addItem(2, 100, "麵店打工", "2014-03-15");
             addItem(4, 50, "", "2014-03-15");
             addItem(5, 80, "排骨飯", "2014-03-15");
             addItem(6, 60, "豚骨拉麵", "2014-03-15");
+
+            addItem(4, 100, "飛碟早餐店", "2014-03-17");
+            addItem(1, 360, "在誠品買 Effective JavaScript 中文版－駕馭 JavaScript 的 68 個具體作法", "2014-03-17");
+            addItem(2, 500, "計網打工", "2014-03-17");
+            addItem(6, 100, "雞排拉麵", "2014-03-17");
 
             if(callback){
                 callback();
@@ -214,7 +227,7 @@ angular.module('MoneyNote.services', [])
         }
         //console.log(stintString);
 
-        db.execute('select ikey, time, classId, cost, note, ckey, title, property from MoneyNote, MoneyClass where classId=ckey' + stintString, function(result){
+        db.execute('select ikey, time, classId, cost, note, ckey, title, property from MoneyNote, MoneyClass where classId=ckey' + stintString + " ORDER BY time ASC, ikey ASC", function(result){
             //console.log(result.rows);
             for(var i = 0; i < result.rows.length; i++){
                 //console.log(result.rows.item(i));
@@ -278,6 +291,7 @@ angular.module('MoneyNote.services', [])
         delClass: deleteClass,
         selectClasses: selectClasses,
         getSettingBtn: getSettingBtn,
+        getTimeRangeTag: getTimeRangeTag,
     }
 })
 

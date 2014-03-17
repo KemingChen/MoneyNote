@@ -8,6 +8,7 @@
     <ion-content has-header="true" has-tabs="true" padding="true">
 	<link rel="stylesheet" type="text/css" href="../css/report.css" />
 		<div class="list">
+			<div class="item item-divider" style="text-align: center;">{{timeRange()}}</div>
 	    	<label class="item" style="display: {{ready ? 'block' : 'none'}};">
 				<div class="board">
 					<piechart data="piechartHistory"></piechart>
