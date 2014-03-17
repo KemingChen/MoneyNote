@@ -109,6 +109,9 @@ angular.module('MoneyNote.services', [])
     }
 
     function getTimeRangeTag(){
+        if(timeRange.start == timeRange.end){
+            return "Today";
+        }
         return timeRange.start + " ~ " + timeRange.end;
     }
 
