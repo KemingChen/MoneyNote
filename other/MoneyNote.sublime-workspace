@@ -1,0 +1,535 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"time",
+				"timeRange"
+			],
+			[
+				"bu",
+				"button"
+			],
+			[
+				"sty",
+				"style"
+			],
+			[
+				"ca",
+				"cancelBtn"
+			],
+			[
+				"M",
+				"MNDB"
+			],
+			[
+				"get",
+				"getClass"
+			],
+			[
+				"ng-",
+				"ng-click"
+			],
+			[
+				"se",
+				"selectItems"
+			],
+			[
+				"de",
+				"deleteItem"
+			],
+			[
+				"fp",
+				"fputs"
+			],
+			[
+				"load",
+				"loadScript"
+			],
+			[
+				"deco",
+				"decode64"
+			],
+			[
+				"margin",
+				"margin-top"
+			],
+			[
+				"mar",
+				"margin-top"
+			],
+			[
+				"Q",
+				"QTitle"
+			],
+			[
+				"QT",
+				"QTitle"
+			],
+			[
+				"ba",
+				"background-attachment"
+			],
+			[
+				"pr",
+				"print"
+			],
+			[
+				"te",
+				"text-align"
+			],
+			[
+				"tex",
+				"text-decoration"
+			],
+			[
+				"fon",
+				"font-size"
+			],
+			[
+				"padding",
+				"padding-top"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"li",
+				"link	Tag"
+			],
+			[
+				"cr",
+				"criterion"
+			],
+			[
+				"j",
+				"jQuery"
+			],
+			[
+				"su",
+				"subjectId"
+			],
+			[
+				"div",
+				"division"
+			],
+			[
+				"subject",
+				"subjectName"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "www/js/core.js",
+			"settings":
+			{
+				"buffer_size": 9615,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+		],
+		"width": 392.0
+	},
+	"console":
+	{
+		"height": 0.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/D/MyApp/Projects/MoneyNote/www/js/core.js",
+		"/D/MyApp/Projects/MoneyNote/www/templates/itemlist.html",
+		"/D/MyApp/Projects/MoneyNote/www/controllers/itemListCtrl.js",
+		"/D/MyApp/Projects/MoneyNote/www/templates/report.html",
+		"/D/MyApp/Projects/MoneyNote/www/controllers/reportCtrl.js",
+		"/D/MyApp/Projects/MoneyNote/www/controllers/itemCtrl.js",
+		"/D/MyApp/Projects/MoneyNote/www/templates/item.html",
+		"/D/MyApp/Projects/MoneyNote/www/templates/classlist.html",
+		"/D/MyApp/Projects/MoneyNote/www/index.html",
+		"/D/備份專區/學習角落/行動應用軟體開發技術/week03/code/Simple_App02.html",
+		"/D/MyApp/test.html",
+		"/D/MyApp/Projects/MoneyNote/www/css/style.css",
+		"/D/MyApp/Projects/MoneyNote/www/templates/classList.html",
+		"/D/MyApp/Projects/MoneyNote/www/templates/itemList.html",
+		"/D/MyApp/Projects/MoneyNote/www/controllers/classListCtrl.js",
+		"/D/MyApp/Projects/MoneyNote/www/js/app.js",
+		"/D/MyApp/Projects/MoneyNote/www/templates/tab.html",
+		"/C/Users/keming/Desktop/angular.min.js",
+		"/D/MyApp/Projects/MoneyNote/www/js/lib/ionic.bundle.min.js",
+		"/D/MyApp/Projects/MoneyNote/www/js/report_charts.js",
+		"/D/MyApp/Projects/MoneyNote/www/js/lib/moneycost_db.js",
+		"/D/MyApp/Example/ionic-angular-cordova-seed-master/www/js/controllers.js",
+		"/D/MyApp/Projects/MoneyNote/www/templates/addItem.html",
+		"/D/MyApp/Projects/MoneyNote/www/controllers/addItemCtrl.js",
+		"/D/備份專區/實用軟體/SubLime Text/license.txt",
+		"/C/Users/keming/Desktop/MoneyCost.js",
+		"/C/Users/keming/Desktop/MoneyCost",
+		"/D/MyApp/Projects/MoneyNote/www/templates/AddItem/inputs.html",
+		"/D/MyApp/Test2.php",
+		"/D/MyApp/test.php",
+		"/D/MyApp/TestNodeJS/static/index.html",
+		"/D/MyApp/MoneyNote/www/controllers/addItemCtrl.js",
+		"/D/MyApp/MoneyNote/www/templates/classList.html",
+		"/D/MyApp/MoneyNote/www/css/style.css",
+		"/D/MyApp/MoneyNote/www/templates/tab.html",
+		"/D/備份專區/學習角落/行動應用軟體開發技術/week03/code/templates/03_hybrid/tab.html",
+		"/D/備份專區/學習角落/行動應用軟體開發技術/week03/code/js/app.js",
+		"/D/MyApp/MoneyNote/www/js/app.js",
+		"/D/MyApp/MoneyNote/www/templates/AddItem/inputs.html",
+		"/D/MyApp/MoneyNote/www/templates/AddItem/index.html",
+		"/D/MyApp/MoneyNote/www/index.html",
+		"/D/MyApp/MoneyNote/www/templates/AddItem/addItem.html",
+		"/D/MyApp/MoneyNote/www/templates/addItem.html",
+		"/D/MyApp/MoneyNote/www/controllers/classListCtrl.js",
+		"/D/MyApp/MoneyNote/www/templates/selectDate.html",
+		"/D/MyApp/MoneyNote/www/js/core.js",
+		"/D/MyApp/MoneyNote/www/js/lib/moneycost_db.js",
+		"/D/MyApp/MoneyNote/templates/itemList.html",
+		"/D/MyApp/MoneyNote/controllers/itemListCtrl.js",
+		"/D/MyApp/MoneyNote/templates/addItem.html",
+		"/D/MyApp/MoneyNote/www/config.xml",
+		"/D/MyApp/MoneyNote/controllers/addItemCtrl.js",
+		"/D/MyApp/MoneyNote/templates/tab.html",
+		"/D/MyApp/MoneyNote/index.html",
+		"/D/MyApp/MoneyNote/www/js/PhoneGapModule.js",
+		"/D/MyApp/MoneyNote/templates/report.html",
+		"/D/桌面/記帳.txt",
+		"/D/MyApp/MoneyNote/js/app.js",
+		"/D/MyApp/MoneyNote/templates/classList.html",
+		"/D/MyApp/MoneyNote/controllers/classListCtrl.js",
+		"/D/MyApp/MoneyNote/controllers/reportCtrl.js",
+		"/D/MyApp/code/templates/tab.html",
+		"/D/MyApp/code/templates/itemList.html",
+		"/D/MyApp/code/js/app.js",
+		"/D/MyApp/code/controller/itemListCtrl.js",
+		"/D/MyApp/code/index.html",
+		"/D/MyApp/code/templates/helloPhoneGap.html",
+		"/D/MyApp/code/js/03_hybrid/helloPhoneGapCtrl.js",
+		"/D/MyApp/code/templates/03_hybrid/helloPhoneGap.html",
+		"/D/MyApp/code/templates/03_hybrid/tab.html",
+		"/D/MyApp/code/Simple_App02.html",
+		"/D/MyApp/code/js/lib/ionic.bundle.min.js",
+		"/C/Users/keming/Desktop/code/Simple_App02.html",
+		"/D/備份專區/學習角落/行動應用軟體開發技術/week03/筆記",
+		"/D/MyApp/code/tab.html",
+		"/D/備份專區/學習角落/行動應用軟體開發技術/week03/code/1_Simple_App02.html",
+		"/C/Users/keming/AppData/Local/Temp/Rar$DI02.556/ionic.bundle.js",
+		"/C/Users/keming/AppData/Local/Temp/Rar$DI00.852/2_app.js",
+		"/C/Users/keming/Desktop/小米",
+		"/C/Users/keming/Desktop/data",
+		"/D/備份專區/學習角落/行動應用軟體開發技術/week02/筆記",
+		"/D/備份專區/學習角落/行動應用軟體開發技術/week02/code/11_MainActivity.java",
+		"/D/備份專區/學習角落/行動應用軟體開發技術/week02/code/21_FriendDetailActivity.java",
+		"/D/備份專區/學習角落/行動應用軟體開發技術/week02/code/12_FriendListView_OnItemClickListener.java",
+		"/D/備份專區/學習角落/行動應用軟體開發技術/week02/code/32_strings.xml",
+		"/C/Users/keming/Desktop/筆記",
+		"/D/備份專區/學習角落/行動應用軟體開發技術/week02/code/14_FriendModel.java",
+		"/D/備份專區/學習角落/行動應用軟體開發技術/week02/code/22_SMSButton_OnClickListener.java",
+		"/D/備份專區/學習角落/行動應用軟體開發技術/week02/code/23_PhoneButton_OnClickListener.java",
+		"/D/備份專區/學習角落/行動應用軟體開發技術/week02/code/24_EmailButton_OnClickListener.java",
+		"/C/Users/keming/Desktop/FriendDetailView.xml",
+		"/D/備份專區/學習角落/行動應用軟體開發技術/week02/code/25_activity_friend_detail.xml",
+		"/D/備份專區/學習角落/行動應用軟體開發技術/week02/code/13_activity_main.xml",
+		"/D/備份專區/學習角落/行動應用軟體開發技術/week02/code/31_AndroidManifest.xml",
+		"/D/www.xiaomi.tw/dianyuan",
+		"/C/Users/keming/Desktop/Nymphomaniac - Volume 1 (2013) 1280x720-eng.srt",
+		"/C/Users/keming/Desktop/Nymphomaniac - Volume 1 (2013)pt.srt",
+		"/C/Users/keming/Desktop/Nymphomaniac - Volume 1 (2013).srt",
+		"/D/Downloads/Nymphomaniac Volume I  & II Unrated Webrip x264 AC3 TiTAN/Nymphomaniac Volume I  & II Unrated Webrip x264 AC3 TiTAN.nfo",
+		"/D/cookie",
+		"/D/www.xiaomi.tw/cart/add/2130100011",
+		"/D/2130100011",
+		"/C/Users/keming/Desktop/20140305",
+		"/D/MyApp/StereoTest/genReport_R_M_L.php",
+		"/D/GoogleDrive/立體音響專題/20140305_白噪音&不同音樂真耳實驗/20140305_原始資料",
+		"/D/MyApp/StereoTest/dist/js/report.js",
+		"/D/MyApp/StereoTest/dist/js/core.js",
+		"/D/MyApp/StereoTest/report.php",
+		"/C/Users/keming/Desktop/20140305-Icer-White-Real-8channel (1).csv",
+		"/D/GoogleDrive/立體音響專題/20140305_真耳/記錄.txt",
+		"/C/Users/keming/Desktop/20140305_真耳/記錄",
+		"/D/MyApp/StereoTest/index.php",
+		"/D/GoogleDrive/立體音響專題/20140216_試聽/Keming/8/20140216_KOSS_8channel_section1.m3u",
+		"/D/MyApp/StereoTest/genReport.php",
+		"/D/MyApp/StereoTest/generator.php",
+		"/D/MyApp/StereoTest/dist/js/core-temp.js",
+		"/D/MyApp/StereoTest/temp.php",
+		"/D/MyApp/StereoTest/dist/css/style.css",
+		"/D/GoogleDrive/Gmail下載/LuKang.txt",
+		"/C/Users/keming/Desktop/修課名單 - 行動應用軟體開發技術_files/jot_caja.js",
+		"/C/Users/keming/Desktop/修課名單 - 行動應用軟體開發技術_files/overlay.css",
+		"/C/Users/keming/Desktop/修課名單 - 行動應用軟體開發技術_files/jot_min_view__zh_tw.js",
+		"/C/Users/keming/Desktop/修課名單 - 行動應用軟體開發技術_files/analytics.js",
+		"/C/Users/keming/Desktop/修課名單 - 行動應用軟體開發技術_files/allthemes-view.css",
+		"/C/Users/keming/Desktop/修課名單 - 行動應用軟體開發技術_files/3021212795-trix_listview_ltr.css",
+		"/C/Users/keming/Desktop/修課名單 - 行動應用軟體開發技術_files/lv.htm",
+		"/C/Users/keming/Desktop/修課名單 - 行動應用軟體開發技術_files/caja.js",
+		"/C/Users/keming/Desktop/修課名單 - 行動應用軟體開發技術_files/ga.js"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"timeRange",
+			"Simple_App02",
+			"onCleanCallback",
+			"object",
+			"onTitleChanged",
+			"action",
+			"+",
+			"selectClassCallback",
+			"classId",
+			"obj.",
+			"tab-",
+			"{{",
+			"$scope",
+			"onclick",
+			"class=\"col button button-dark\"",
+			"Item",
+			"key",
+			"iclass",
+			"              ",
+			"             ",
+			"            ",
+			"           ",
+			"          ",
+			"         ",
+			"        ",
+			"       ",
+			"              ",
+			"             ",
+			"            ",
+			"           ",
+			"          ",
+			"         ",
+			"        ",
+			"       ",
+			"      ",
+			"     ",
+			"    ",
+			"              ",
+			"             ",
+			"            ",
+			"           ",
+			"          ",
+			"         ",
+			"        ",
+			"       ",
+			"      ",
+			"     ",
+			"    ",
+			"   ",
+			"  ",
+			"getTimeIndex",
+			"\"/",
+			"/",
+			"index",
+			"when",
+			"03_hybrid",
+			"，",
+			"+",
+			"，",
+			"fly",
+			"count($ans)",
+			"result",
+			"20140305",
+			"qTotal",
+			"\"D",
+			"=>",
+			"陳科銘",
+			"true",
+			"陳科銘",
+			"jre",
+			"%0A",
+			"%20",
+			"title-",
+			";",
+			" : ",
+			" = ",
+			"var ",
+			"light",
+			"black",
+			" ",
+			"linear",
+			"liner",
+			" core.js:2",
+			"default",
+			" VM481:2",
+			"table-bordered",
+			"table-border-color",
+			"凱凱",
+			"科科",
+			"達達",
+			"/",
+			"&amp;list=PL57alTdgN0Qn4UjVkWKA12cSICwn6fKLi",
+			"/watch\\?v=[^\"]*",
+			"/watch?v=*\"",
+			"/watch?v=",
+			"\\watch?v=\\",
+			"/watch?v=",
+			" VM513:2",
+			" VM315:2",
+			"keming\n ",
+			" VM315:2",
+			"kerming",
+			"keming",
+			" VM71411:60",
+			"4257-248-78-315+1368=4984\n\n7/4\n午餐 175\n北回 60 (妹妹出 60 元)\n西瓜汁 30\n頂好 129\n松青 185\n75+(30-60)+15+60+90=210\n\n7/5\nStar 90\n飲料 12\n家樂福 20\n冰 25\n90+12+20+25=147\n\n7/6\n早餐 35\nStar 120\n35+120=155\n\n4984+210+147+155=5496\n\n7/9\n大潤發 400\n7/11\n頂好 120\n7/20\n大潤發 309 (妹妹出 309 元)\n7/25\n來來 35 (妹妹出 35 元)\n松青 207 (妹妹出 207 元)\n我借妹妹 300\n400+120-309-20-137+300=354\n\n7/29\n妹妹電話費 667\n松青 84+50\n全聯 191\n水果 130 (妹妹出 130 元)\n667+50+80-65=732\n\n8/1\n牙醫 100\n大潤發 350\n魯味 40\n8/2\n香 10\n借 300\n愛玉種子 80(妹妹出 80 元)\n8/3\n茶湯會 138\n100+350+40+10+300-40+138=898\n\n8/5\n全家的冰 60(妹妹出 60 元)\n沙拉船 100(妹妹出 100 元)\n沙拉漢堡 50(妹妹出 50 元)\n炸的 50(妹妹出 50 元)\n-30-50-25-25=-130\n\n8/6\n全聯 90\n8/7\n午餐 50\n90+50=140\n\n8/8\n幾分甜 50\n晚餐 -70\n北回 -30\n煎餃 30\n50-70-30+30=-20\n\n8/9\n午餐 35\n8/10\n午餐 35\n租摩托車 450 (妹妹出 350 元)\n加油 105 (妹妹出 100 元)\n民宿 2000\n捲冰淇淋 35 (妹妹出 35 元)\n杏包菇 100\n蛋糕泡芙+堤拉米蘇 249\n木瓜牛奶 40\n愛玉檸檬 30\n若貝爾奶凍 430 (妹妹出 430 元)\n8/11\n停車費 30 (妹妹出 30 元)\n童玩節門票 600 (妹妹出 600 元)\n午餐 145 (妹妹出 100 元) ----> 妹妹吃 85\n包心粉圓 50\n行李 17 (妹妹出 17 元)\n泳褲 499 (妹妹出 499 元)\n35+35-150-50+1000-20+50+100+20+15-230-15-300-20+25-10-500=-15\n\n8/14\n晚餐 120 (妹妹出 120 元)\n60\n\n8/12\n優酪乳 125 (妹妹出 125 元)\n8/13\n租片子 120 (妹妹出 120 元)\n8/16\n家樂福 300\n8/18\n小人國 399+10+25+100+15+30\n8/20\n全聯 50 \n8/22\n全家冰 30 (妹妹出 30 元)\n鞋子 390\n-70-60+300+399+10+25+100+15+30+50-20+390=1169\n\n8/25\n電影 460 (妹妹出 460 元)\n麵包 52 ----> 妹妹吃 30\n牛角麵包 210\n寶礦力水德 23 (妹妹出 23 元)\n蔬菜餅 30\n-230+30+80-13+15=-118\n\n8/26 \n晚餐 85 (妹妹出 85 元)\n全聯 189 (妹妹出 189 元) ---> 138 哥哥的\n8/27 \n日常用品 69 \n-45-138-34+69=-148\n\n8/29\n全聯 110\n8/30\n晚餐 60\n110+60=170\n\n8/31 \n舒果  876 \nIKEA 29+608 (妹妹出)\n底片 180\n9/8\n寶礦力 25\n隱形眼鏡 220\n八仙 1300\n寄物櫃 70\n造型杯 80\n續杯 35+35\n德州薯條 22\n聚 858\n876/2-(29+608)/2+180/2+10+220+1300/2+(70+80+70+22+858)/2=1600\n\n9/6\n星巴克 145\n9/7\n素食展 200\n9/12\n蛋糕 560 (妹妹出)\n大潤發 656 \n鮮芋仙 49\n9/13 \n星巴克 115\n晚餐 92\n9/15 \n車票 198\n六福村門票 798\n置物櫃 80\n(145+200-560+656+49+115+92+198+798+80)/2=850\n\n9/17\npizza 116\n茶湯會 41\n9/20\n妹妹借100\n9/22\n核桃酥 80\n大泡芙 94\n9/23 \n鑰匙 120 \n郵寄 65\n早餐 65 (哥哥飯糰30)\n影印 83\n9/25\n水龜博 45 (妹妹出)\n早餐 50 (妹妹出)\n9/26\n豆花 90 (妹妹出)\n妹妹借 100\n(116+41+80+94+120+65+65+65-45-50-90)/2+100+83+100=510\n\n高雄之旅\n高鐵 *1490 \n統聯 960\n水 20\n機車 700\n早餐 50+*27\n加油 100+50+20\n小琉球 1300 \n冰 *65+120\n民宿 600\n行李寄放 20+17+17\n麻花捲 300\n地瓜餅 10 \n茶湯會 55 \n起司薯餅 40+40+40\n掛包 25 +25\n米糕 30+30\n臭豆腐 60 \n炒飯 60+60\n早餐 80\n渡船 85\n海苔 200\n午餐 243\n過戶 510\n雞蛋糕 30 \n大苑子 45\n摩天輪 240\n鹽酥雞 45\n木瓜牛奶 50\n飲料 39\n永和 55 \n中餐 80\n(-1490+960+20+700+50-27+1300-65+120+600+54+300+10+55+120+50+60+60+120+80+85+200+243+30+45+240+45+50+39+55+80)+510=4500\n\n9/26\n一之軒麵包 128 (妹妹出)\n9/27\n星巴克 145 (妹妹出)\n早餐 66 (妹妹出)\n9/28 \n豆漿兩杯 40 (妹妹出)\n午餐 105 (妹妹出)\n9/29 \n早餐 101 (妹妹出)\n-128*2/3-(145+66+40+105+101)/2=-315\n\n9/29\n家樂福 639\n9/30\n全聯 311 (妹妹出101)\n10/5\n自助餐 40\n10/6\n家樂福 295\n煎餃 120 (妹妹出120)\n汽水 45 (妹妹出45)\n639/2+(311-101)/2+40+295/2-120/2-45/2=500\n\n10/7\n火鍋 988\n10/8\n早餐 100(妹妹出100)\n全聯 104(妹妹出104)\n麵包 30(妹妹出30)\n10/9\n冰 45(妹妹出45)\n晚餐 65(妹妹出65)\n麵包 65(妹妹出65)\n988/2-(100+104+30)/2-45-65-65/2=230\n\n10/13\n全聯 229 (妹妹出45)\n10/14 \n水龜伯 35 (妹妹出)\n肉圓 35 (妹妹出)\n羹麵 50 (妹妹出)\n魚排 30 (妹妹出)\n早餐 60 (妹妹出)\n電池 38 (妹妹出)\n10/15\n計程車 145 (妹妹出)\n-(229+35+50+30+60+38+145)/2-35=-328\n\n10/16 \n還謝美人100(妹妹)\n10/17\n安全帽1200(妹妹)\n永和 35(妹妹)\npizza hut 89(妹妹)\n10/19 \n早餐 100（哥哥） \n10/20\n午餐妹妹吃30（哥哥）\n零食 120(妹妹)\n大潤發 855(妹妹)\n10/21\n晚餐 60(妹妹)\n鬆餅 45(妹妹)\n成績單 65(妹妹)\n資料夾 29(妹妹)\n滷味 115(妹妹)\n10/22\n甜甜圈 65(妹妹)\n10/23\n挫冰45(妹妹)\n早餐哥哥吃30(妹妹)\n10/24\n晚餐 84(妹妹)\n10/27\n樸實農場 130(哥哥)\n頂好 187(哥哥)\n10/28\n麵包 213(妹妹)\n11/1\n早餐 100(妹妹)\n11/3\n玉香齋 128(哥哥)\n11/4\n冰火波羅 72(哥哥)\n全聯 274(哥哥)\n11/7\n冰 15(妹妹)\n冰火波羅 35(妹妹)\n加油 100(妹妹)\n霜淇淋 35(妹妹)\n11/8\n青蛙下蛋 35(妹妹)\n起司馬鈴薯 60(妹妹)\n炸飯糰 70(妹妹)\n烤鮮奶 40(妹妹)\n飲料 25(妹妹)\n11/9\n炸飯糰 70(妹妹)\n飲料 40(妹妹)\n冰火波羅 35(妹妹)\n熱狗 50(妹妹)\n11/10\nPP99 387(妹妹)\n麵包 80(哥哥)\n大潤發 498(妹妹)\n(-1200-35-89+100-120-855-60-45-115-65-45-84+130-187-213-100-100+128+72+274-15-35-100-35-35-60-70-40-25-70-40-25-70-40-35-50-387+80-498)/2+(-100-65-29)=-2273\n\n11/11\n晚餐 240(妹妹)\n11/17\n晚餐 155(妹妹)\n泡芙 48(妹妹)\n11/18\n晚餐 125\n煎餃煎包 40(哥哥吃)+20(妹妹吃)(妹妹)\n(-240-155-48+125)/2-40=-200\n\n11/19 火鍋 150 麵包 118 大潤發 662 燒仙草 49 加油 133（哥哥）\n11/20 晚餐 105\n11/21 鬆餅 45\n11/22 晚餐 233 麵包 25\n11/23 置物櫃 20 紅豆餅 25（哥哥） 焗烤馬鈴薯 70（哥哥） 麵線臭豆腐 70（哥哥） 杏仁茶120妹妹的（哥哥）杏仁茶加芋頭豆腐 60（哥哥）加油 133\n11/24 電影 400 多多綠 25 午餐 105 花生麥芽糖 100 豆干 120 芭樂汁 25 炸蛋餅 100 熱狗 60 加油 133\n11/25 晚餐 55 豆花 45 大潤發加晚餐 886+90（哥哥）\n11/26 紅豆湯圓 40\n11/27 燒烤 240 \n11/28 午餐 55 奶蓋紅 39 \n11/29 早餐 80妹妹吃50（哥哥）\n12/1 早餐 80 大創 273（哥哥）飲料 40 火鍋 170（哥哥）\n12/2 早餐 75  煎包 60哥哥吃40 奶蓋 39（哥哥）大潤發 1042\n12/3 冰 182（哥哥）粉圓60 火鍋 170（哥哥）\n12/4 妹妹的35 （哥哥）\n12/5 哥哥的阿華田 25 哥哥的奶茶 40 起司馬鈴薯 60 車輪餅 15 哥哥剪頭髮 100 \n12/6 保齡球 300 早餐 65 草莓工房（哥哥）638  妹妹急診（哥哥）380\n12/8 燒仙草麻糬（哥哥）100\n12/9 燒麻糬 50 大潤發 353\n12/10 燒仙草 35 豆漿紅茶 25 加油 136\n(-150-118-662-49+133-105-45-233-25-20+25+70+70+60-133-400-25-105-100-120-25-100-60-133-55-45+886+90-40-240-55-39-80+273-40+170-75+39-1042+182-60+170-60-15-300-65+638+100-50-35-25-136-353)/2+120+50+20+35-25-40-100+380=-816\n\n12/13\n全聯 148\n12/15\n牛角 233\n素粽素麵 290\n炸食 80\n豆花 35\n燒麻糬 50\n油 136\n12/16\n大創 39\n家樂福 114\n12/18\n加油 135(妹妹)\n12/19\n大潤發 199(妹妹)\n12/22\n加油 134\n12/24\n打火機 20(妹妹)\n蠟燭+燭台 197\n12/26\n光南 133\n12/28\n大潤發 376(妹妹)\n大創 39(妹妹)\n12/30\n大潤發 136\n1/2\n牛奶 99(妹妹)\n(148+233+290+80+35+50+136+39+114-135-199+134-20+197+133-376-39+136-99)/2=428\n\n皮套 700-----------(要先等等看 妹妹看要多少)\n350=350\n\n休園 75\n休園 105(妹妹)\n辛巴克 145\n明信片 30\n湯圓 95\n燒麻糬 50\n陳三鼎 35\n番茄麵+麻醬麵 120\n沙拉船+提拉米蘇 170\n妹妹的影印 170\n火鍋 220\n素還真 60\nIkea 163(妹妹)\n借妹妹 100\n(75-105+145+30+95+50+35+120+170+220+60-163)/2+170+100=636\n\n1/4\n妹妹借 100\n1/5\n大潤發 179\n煎餃 80(妹妹)\n1/6\n豆花 40\n薯條 48(妹妹)\n加油 136(妹妹)\n涼麵 35(妹妹吃)\n吐司 40(妹妹)\n(179-80+40-48-136-40)/2+100+35=90\n\n1/7\nPizza 89(妹妹)\nCoCo 40(妹妹)\n面紙 99(妹妹)\n掛號費 150(妹妹)\n麻糬 50(妹妹)\n1/8\n大呼過癮 170(妹妹)\n1/9\n吐司 48(妹妹)\n小七 134\n(-89-40-50-170-48+134)/2-99-150=-380\n\n4984+210+147+155+354+732+898-130+140-20-15-60+1169-118-148+170+1600+850+510+4500-315+500+230-330-2275-200-816+428+350+636+90-380=13846",
+			"13846",
+			"\"C:/Server/AppServ/www\"",
+			"C:/Server/AppServ/www",
+			"C:/Server/AppServ",
+			"C://Server",
+			"\n\n"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"info\n ",
+			"凱\n ",
+			"科\n ",
+			"達\n ",
+			"keming\n ",
+			"keming\n",
+			"\n",
+			"keming\n",
+			"\n",
+			"\n\n",
+			""
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": false
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "www/js/core.js",
+					"settings":
+					{
+						"buffer_size": 9615,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3258,
+								3258
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2178.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 38.0
+	},
+	"input":
+	{
+		"height": 38.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 62.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 218.0,
+	"status_bar_visible": true
+}
